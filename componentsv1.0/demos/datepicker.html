@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datepicker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+
+    <link href="../assets/plugins/datepicker/datepicker.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>Datepicker 是一款基于Query UI的日期选择器。您可以高度配置插件以及自定义日期格式和语言，限制可选择的日期范围，添加按钮和其他导航选项</p>
+            <p>详细的参数使用，可以参考 <a target="_blank" href="http://api.jqueryui.com/datepicker/">jQuery UI Datepicker API</a></p>
+            <p>更多案例，可以参考 <a target="_blank" href="http://jqueryui.com/datepicker/">jQuery UI Datepicker Examples</a></p>
+        </article>
+        <section>
+            <header>
+                <h3>用法</h3>
+            </header>
+            <article>
+                <p>默认情况下，当相关的文本域获得焦点时，在一个小的覆盖层打开日期选择器。对于一个内联的日历，只需简单地将日期选择器附加到 div 或者 span 上。</p>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>默认</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-md-8 form-group">
+                            <label class="col-md-8 control-label text-right">默认时间</label>
+                            <div class="col-md-16">
+                                <input id="J_datepicker" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-8 form-group">
+                        </div>
+                    </div>
+                </div>
+                <pre>
+$("#J_datepicker").datepicker({
+    showOtherMonths: true,      //默认：false  是否显示其他月份的日期
+    showButtonPanel: true,      //默认：false  是否显示一个 选择当天日期"Today"按钮，显示一个关闭日历"Close"按钮
+    changeMonth: true,          //默认：false  是否显示可选择月份
+    changeYear: true,           //默认：false  是否显示可选择年份
+    dateFormat: "yy-mm-dd",     //默认：yy-mm-dd 默认和选择语言有关  格式化日期
+    minDate: -1,                //限制日期范围,通过 minDate 和 maxDate 选项限制可选择的日期范围。设置起止日期为实际的日期（new Date(2009, 1 - 1, 26)），或者为与今天的一个数值偏移（-20），
+    maxDate: "+1M +10D"         //或者为一个周期和单位的字符串（'+1M +10D'）。如果设置为字符串，使用 'D' 表示天，使用 'W' 表示周，使用 'M' 表示月，使用 'Y' 表示年。
+});</pre>
+            </article>
+        </section>
+        
+    </div>
+
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    
+    <script src="../assets/js/interface.min.js"></script>
+    <script src="../assets/plugins/datepicker/datepicker.min.js"></script>
+    <script>
+    $(function() {
+        $("#J_datepicker").datepicker({
+            showOtherMonths: true,      //默认：false  是否显示其他月份的日期
+            showButtonPanel: true,      //默认：false  是否显示一个 选择当天日期"Today"按钮，显示一个关闭日历"Close"按钮
+            changeMonth: true,          //默认：false  是否显示可选择月份
+            changeYear: true,           //默认：false  是否显示可选择年份
+            dateFormat: "yy-mm-dd", //默认：yy-mm-dd 默认和选择语言有关  格式化日期
+            minDate: -1,
+            maxDate: "+1M +10D" //限制日期范围,通过 minDate 和 maxDate 选项限制可选择的日期范围。设置起止日期为实际的日期（new Date(2009, 1 - 1, 26)），或者为与今天的一个数值偏移（-20），或者为一个周期和单位的字符串（'+1M +10D'）。如果设置为字符串，使用 'D' 表示天，使用 'W' 表示周，使用 'M' 表示月，使用 'Y' 表示年。
+        });
+    })
+    </script>
+</body>
+
+</html>

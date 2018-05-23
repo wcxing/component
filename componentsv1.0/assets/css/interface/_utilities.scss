@@ -1,0 +1,170 @@
+//
+// Utility classes
+// --------------------------------------------------
+.color-blue{
+  color: $brand-primary !important;
+}
+.color-green{
+  color: $brand-success !important;
+}
+.color-orange{
+  color: $brand-warning !important;
+}
+.color-red{
+  color: $brand-danger !important;
+}
+.color-white{
+  color: #fff !important;
+}
+
+
+.border{
+  border: 1px  solid $border-color !important;
+}
+.border-left{
+  border-left: 1px  solid $border-color !important;
+}
+.border-right{
+  border-right: 1px  solid $border-color !important;
+}
+.border-top{
+  border-top: 1px  solid $border-color !important;
+}
+.border-bottom{
+  border-bottom: 1px  solid $border-color !important;
+}
+.borderless{
+  border: none !important;
+}
+
+
+.font-sm{
+  font-size: $font-size-sm !important;
+}
+.font-md{
+  font-size: $font-size-md !important;
+}
+.font-big{
+  font-size: $font-size-big !important;
+}
+.font-lg{
+  font-size: $font-size-lg !important;
+}
+.font-huge{
+  font-size: $font-size-huge !important;
+}
+
+.lh-sm{
+  line-height: $line-height-sm;
+}
+.lh-md{
+  line-height: $line-height-md;
+}
+.lh-big{
+  line-height: $line-height-big;
+}
+.lh-lg{
+  line-height: $line-height-lg;
+}
+.lh-huge{
+  line-height: $line-height-huge;
+}
+
+$sizes: (0:0, sm: $padding-margin-size-sm, md: $padding-margin-size-md, big: $padding-margin-size-big, lg: $padding-margin-size-lg, huge: $padding-margin-size-huge);
+@each $name, $size in $sizes {
+    $pdmgs: ( '': '', l: left, t: top, r: right, b: bottom);
+    @each $p, $pd in $pdmgs {
+        $lin: '-' !default;
+        @if $p=='' {
+            $lin: '';
+        }
+        @else {
+            $lin: '-';
+        }
+        .pd#{$p}-#{$name} {
+            padding#{$lin}#{$pd}: $size !important;
+        }
+    }
+    @each $p, $mg in $pdmgs {
+        $lin: '-' !default;
+        @if $p=='' {
+            $lin: '';
+        }
+        @else {
+            $lin: '-';
+        }
+        .mg#{$p}-#{$name} {
+            margin#{$lin}#{$mg}: $size !important;
+        }
+    }
+}
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+.pos-r{
+  position: relative;
+}
+.pos-a{
+  position: absolute;
+}
+.pos-f{
+  position: fixed;
+}
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+
+.with-padding{
+  padding: 10px;
+}
+
+.text-ellipsis{
+  @include text-overflow;
+}

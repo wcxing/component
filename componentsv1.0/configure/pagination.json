@@ -1,0 +1,12 @@
+{
+	"widget1": {
+    "thumbail": "thumbnail/pagination_01.png",
+    "widgetName": "常规分页",
+    "configMap": {}
+  },
+  "widget2": {
+    "thumbail": "thumbnail/pagination_02.png",
+    "widgetName": "简单分页",
+    "configMap": {}
+  }
+}

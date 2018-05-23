@@ -1,0 +1,33 @@
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@import "font-scss/variables";
+@import "font-scss/mixins";
+@import "font-scss/path";
+@import "font-scss/core";
+@import "font-scss/larger";
+@import "font-scss/fixed-width";
+@import "font-scss/list";
+@import "font-scss/bordered-pulled";
+@import "font-scss/animated";
+@import "font-scss/rotated-flipped";
+@import "font-scss/stacked";
+@import "font-scss/icons";
+
+.icon-box{
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 6px;
+	background-color: #fafafa;
+	font-size: 26px;
+	display: inline-block;
+}
+.icon-box:hover{
+	background-color: #1d9d74;
+	color: #fff;
+}

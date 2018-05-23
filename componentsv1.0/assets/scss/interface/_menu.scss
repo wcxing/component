@@ -1,0 +1,336 @@
+.menu{
+    >.btn {
+        display: block;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .btn + .nav {
+        margin-top: 15px;
+    }
+    >.nav {
+        >li {
+            float: none;
+
+            &:first-child.nav-heading,
+            &:first-child > a{
+                margin-left: 0;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            &:last-child > a {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+
+            &.nav-parent > a > .nav-parent-fold-icon {
+                position: absolute;
+                top: 11px;
+                right: 10px;
+                display: block;
+                filter: alpha(opacity=45);
+                opacity: .45;
+                -webkit-transition: all .5s;
+                transition: all .5s;
+            }
+            &.nav-parent > a:hover > .nav-parent-fold-icon {
+                filter: alpha(opacity=75);
+                opacity: .75;
+            }
+            + li{
+                margin-top: -1px;
+            }
+            >.nav {
+                display: none;
+                background-color: #f6f6f6;
+                > li{
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    + li{
+                        margin-top: -1px;
+                        margin-left: 0;
+                    }
+                    &,>a{
+                        margin-left: 0;
+                    }
+                    > a {
+                        padding-left: 35px;
+                        margin-top: -1px;
+                        border: 1px solid #ddd;
+                        :focus,a:hover{
+                            color: #fff;
+                            background-color: #3280fc;
+                            border-color: #3280fc;
+                        }
+                    }
+                    &.active{
+                        > a[class *= icon-],
+                        a:focus[class *= icon-],
+                        a:hover[class *= icon-]{
+                            color: #fff
+                        }
+                    }
+                    > .nav > li > a > [class *= icon-],
+                    > a > [class *= icon-] {
+                        display: inline-block;
+                        margin-right: 5px;
+                        color: grey;
+                    }
+                }
+            }
+            >.nav > li.active{
+                >a[class *= icon-],
+                >a:focus[class *=icon-],
+                >a:hover[class *=icon-] {
+                    color: #fff;
+                }
+            }
+            >.nav > li.show >a{
+                &:hover{
+                    background-color: #f1f1f1;
+                }
+                &,&:focus,&:hover{
+                    color: #353535;
+                    background-color: #fff;
+                    border-color: #ddd;
+                    > [class *=icon-]{
+                        color: #353535;
+                    }
+                }
+            }
+            >.nav > li.show{
+                &:last-child > a {
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0
+                }
+                &:last-child > .nav > li:last-child > a {
+                    border-bottom-right-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+                > .nav {
+                    display: block;
+                }
+            }
+            >.nav > li.nav-heading {
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+            }
+        }
+    }
+    &.menu-fixed-left{
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 220px;
+    }
+    &.menu-inverse{
+        background-color: $navbar-inverse-bg;
+        border-color: $navbar-inverse-border;
+        .nav > li >a{
+            border-color: transparent;
+            border-bottom-color: #494a4c;
+            color: #fff;
+        }
+    }
+}
+/*** ESSENTIAL STYLES ***/
+.menu-basic{
+    @include clearfix;
+}
+.menu-basic, .menu-basic * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-basic li {
+    position: relative;
+}
+.menu-basic ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+.menu-basic > li {
+    float: left;
+}
+.menu-basic li:hover > ul,
+.menu-basic li.menu-hover > ul {
+    display: block;
+}
+
+.menu-basic a {
+    display: block;
+    position: relative;
+}
+.menu-basic ul ul {
+    top: 0;
+    left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+
+.menu-basic ul {
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+    min-width: 12em; /* allow long menu items to determine submenu width */
+    *width: 12em; /* no auto sub width for IE7, see white-space comment below */
+}
+.menu-basic a {
+    border-right: 1px solid #fff;
+    
+    padding: 0 2em;
+    text-decoration: none;
+    zoom: 1; /* IE7 */
+}
+.menu-basic li>a {
+    line-height: 50px;
+}
+.menu-basic a {
+    color: $navbar-default-link-color;
+}
+.menu-basic li {
+    // background: #BDD2FF;
+    white-space: nowrap; /* no need for Supersubs plugin */
+    *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+.menu-basic ul li {
+    background: $nav-link-hover-bg;
+}
+.menu-basic ul ul li {
+    background: $nav-link-hover-bg;
+}
+.menu-basic ul li a{
+    padding-left: 1em;
+    padding-right: 1em;
+    border-bottom: 1px solid #dFeEFF; //fallback colour must use full shorthand
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    border-right-color: transparent;
+}
+.menu-basic li:hover,
+.menu-basic li.menu-hover {
+    background: $nav-link-hover-bg;
+    /* only transition out, not in */
+    -webkit-transition: none;
+    transition: none;
+}
+
+/*** arrows (for all except IE7) **/
+.menu-arrows .menu-with-ul {
+    padding-right: 2.5em;
+    *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.menu-arrows .menu-with-ul:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    margin-top: -3px;
+    height: 0;
+    width: 0;
+    /* order of following 3 rules important for fallbacks to work */
+    border: 5px solid transparent;
+    border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-top-color: rgba(0,0,0,.6);
+}
+.menu-arrows > li > .menu-with-ul:focus:after,
+.menu-arrows > li:hover > .menu-with-ul:after,
+.menu-arrows > .menu-hover > .menu-with-ul:after {
+    border-top-color: #999; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.menu-arrows ul .menu-with-ul:after {
+    margin-top: -5px;
+    margin-right: -3px;
+    border-color: transparent;
+    border-left-color: #999; /* edit this to suit design (no rgba in IE8) */
+    border-left-color: rgba(0,0,0,.5);
+}
+.menu-arrows ul li > .menu-with-ul:focus:after,
+.menu-arrows ul li:hover > .menu-with-ul:after,
+.menu-arrows ul .menu-hover > .menu-with-ul:after {
+    border-left-color: white;
+}
+
+
+
+
+/*** mega STYLES ***/
+.menu-mega {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include clearfix;
+}
+.menu-mega .menu-mega-box {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+.menu-mega > li {
+  float: left;
+}
+.menu-mega li:hover > .menu-mega-box,
+.menu-mega li.menu-hover > .menu-mega-box {
+  display: block;
+}
+
+.menu-mega > li > a {
+  display: block;
+  position: relative;
+}
+
+
+/*** DEMO SKIN ***/
+
+.menu-mega .menu-mega-box {
+  box-shadow: 2px 3px 6px rgba(0,0,0,.2);
+  width: 100%; /* allow long menu items to determine submenu width */
+}
+.menu-mega > li > a {
+  border-right: 1px solid #fff;
+  padding: 0 2em;
+  line-height: 50px;
+  text-decoration: none;
+  zoom: 1; /* IE7 */
+  color: $navbar-default-link-color;
+}
+.menu-mega > li:last-child > a {
+    border-right-color: transparent;
+}
+.menu-mega > li {
+  // background: #BDD2FF;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+.menu-mega > li:hover,
+.menu-mega > li.menu-hover {
+  background: $nav-link-hover-bg;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
+/*** mega menu dropdown ***/
+.menu-mega-box {
+  background-color: $nav-link-hover-bg;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+}
+

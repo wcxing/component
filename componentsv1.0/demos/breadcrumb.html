@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>面包屑</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>面包屑导航用来指定当前业务模块所对应的路径，路径层级上添加链接，可以快速的返回到上级路径</article>
+        <section>
+            <header>
+                <h3>示例</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <ol class="breadcrumb">
+                        <li><i class="icon icon-home"></i> 首页</li>
+                    </ol>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="icon icon-home"></i> 首页</a></li>
+                        <li><a href="#">目录</a></li>
+                    </ol>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="icon icon-home"></i> 首页</a></li>
+                        <li><a href="#">目录</a></li>
+                        <li class="active">存档</li>
+                    </ol>
+                </div>
+                <pre>&lt;ol&nbsp;class=&quot;breadcrumb&quot;&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/url/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/url/&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;Data&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

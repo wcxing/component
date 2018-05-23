@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>导航条</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+</head>
+
+<body onload="afterPageLoad()">
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>简单导航条</h3>
+            </header>
+            <article>
+                <p>简单导航条可以很方便的进行定制。</p>
+                <div class="example">
+                    <nav class="navbar" role="navigation">
+                        <!-- 导航头部 -->
+                        <div class="navbar-header">
+                            <!-- 移动设备上的导航切换按钮 -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-example">
+                                <span class="sr-only">切换导航</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- 品牌名称或logo -->
+                            <a class="navbar-brand" href="#">Interface 4.0</a>
+                        </div>
+                        <!-- 导航项目 -->
+                        <div class="collapse navbar-collapse navbar-collapse-example">
+                            <!-- 一般导航项目 -->
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">项目</a></li>
+                                <li><a href="#">需求</a></li>
+                                <li><a href="#">测试</a></li>
+                                <!-- 导航中的下拉菜单 -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">任务</a></li>
+                                        <li><a href="#">待办</a></li>
+                                        <li><a href="#">Bug</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">用例</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END .navbar-collapse -->
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;&lt;!--&nbsp;导航头部&nbsp;--&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;navbar-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;移动设备上的导航切换按钮&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;navbar-toggle&quot;&nbsp;data-toggle=&quot;collapse&quot;&nbsp;data-target=&quot;.navbar-collapse-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;sr-only&quot;&gt;切换导航&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;品牌名称或logo&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;class=&quot;navbar-brand&quot;&nbsp;href=&quot;your/nice/url&quot;&gt;Interface&lt;/a&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&lt;!--&nbsp;导航项目&nbsp;--&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;collapse&nbsp;navbar-collapse&nbsp;navbar-collapse-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;一般导航项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&nbsp;navbar-nav&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;项目&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;需求&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;导航中的下拉菜单&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;your/nice/url&quot;&nbsp;class=&quot;dropdown-toggle&quot;&nbsp;data-toggle=&quot;dropdown&quot;&gt;管理&nbsp;&lt;b&nbsp;class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;任务&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;END&nbsp;.navbar-collapse&nbsp;--&gt;
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>默认导航条</h3>
+            </header>
+            <article>
+                <p><code>.navbar-default</code></p>
+                <div class="example">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- 导航头部 -->
+                        <div class="navbar-header">
+                            <!-- 移动设备上的导航切换按钮 -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-default-example">
+                                <span class="sr-only">切换导航</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- 品牌名称或logo -->
+                            <a class="navbar-brand" href="#">Interface 4.0</a>
+                        </div>
+                        <!-- 导航项目 -->
+                        <div class="collapse navbar-collapse navbar-collapse-default-example">
+                            <!-- 一般导航项目 -->
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">项目</a></li>
+                                <li><a href="#">需求</a></li>
+                                <!-- 导航中的下拉菜单 -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">任务</a></li>
+                                        <li><a href="#">待办</a></li>
+                                        <li><a href="#">Bug</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">测试</a></li>
+                                        <li><a href="#">用例</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END .navbar-collapse -->
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&nbsp;navbar-default&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>深色导航条</h3></header>
+            <article>
+                <p><code>.navbar-inverse</code></p>
+                <div class="example">
+                    <nav class="navbar navbar-inverse" role="navigation">
+                        <!-- 导航头部 -->
+                        <div class="navbar-header">
+                            <!-- 移动设备上的导航切换按钮 -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-inverse-example">
+                                <span class="sr-only">切换导航</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- 品牌名称或logo -->
+                            <a class="navbar-brand" href="#">Interface 4.0</a>
+                        </div>
+                        <!-- 导航项目 -->
+                        <div class="collapse navbar-collapse navbar-collapse-inverse-example">
+                            <!-- 一般导航项目 -->
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">项目</a></li>
+                                <li><a href="#">需求</a></li>
+                                <!-- 导航中的下拉菜单 -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">任务</a></li>
+                                        <li><a href="#">待办</a></li>
+                                        <li><a href="#">Bug</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">测试</a></li>
+                                        <li><a href="#">用例</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END .navbar-collapse -->
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&nbsp;navbar-inverse&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>使用表单元素</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- 导航头部 -->
+                        <div class="navbar-header">
+                            <!-- 移动设备上的导航切换按钮 -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-form-example">
+                                <span class="sr-only">切换导航</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- 品牌名称或logo -->
+                            <a class="navbar-brand" href="#">Interface 4.0</a>
+                        </div>
+                        <!-- 导航项目 -->
+                        <div class="collapse navbar-collapse navbar-collapse-form-example">
+                            <!-- 一般导航项目 -->
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">项目</a></li>
+                                <li><a href="#">需求</a></li>
+                                <!-- 导航中的下拉菜单 -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">任务</a></li>
+                                        <li><a href="#">待办</a></li>
+                                        <li><a href="#">Bug</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">测试</a></li>
+                                        <li><a href="#">用例</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- 导航中的表单 -->
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="搜索">
+                                </div>
+                                <button type="submit" class="btn btn-default">搜索</button>
+                            </form>
+                        </div>
+                        <!-- END .navbar-collapse -->
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&nbsp;navbar-default&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;navbar-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;collapse&nbsp;navbar-collapse&nbsp;navbar-collapse-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;导航中的表单&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&nbsp;class=&quot;navbar-form&nbsp;navbar-left&quot;&nbsp;role=&quot;search&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;form-group&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;搜索&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;submit&quot;&nbsp;class=&quot;btn&nbsp;btn-default&quot;&gt;搜索&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>将内容放置与导航右侧</h3></header>
+            <article>
+                <div class="example">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- 导航头部 -->
+                        <div class="navbar-header">
+                            <!-- 移动设备上的导航切换按钮 -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-right-example">
+                                <span class="sr-only">切换导航</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- 品牌名称或logo -->
+                            <a class="navbar-brand" href="#">Interface 4.0</a>
+                        </div>
+                        <!-- 导航项目 -->
+                        <div class="collapse navbar-collapse navbar-collapse-right-example">
+                            <!-- 一般导航项目 -->
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">项目</a></li>
+                                <li><a href="#">需求</a></li>
+                                <!-- 导航中的下拉菜单 -->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">任务</a></li>
+                                        <li><a href="#">待办</a></li>
+                                        <li><a href="#">Bug</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">测试</a></li>
+                                        <li><a href="#">用例</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- 右侧的导航项目 -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">帮助</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">探索 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">敏捷开发</a></li>
+                                        <li><a href="#">HTML5</a></li>
+                                        <li><a href="#">Javascript</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">探索宇宙</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END .navbar-collapse -->
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&nbsp;navbar-default&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;&lt;!--&nbsp;导航头部&nbsp;--&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;navbar-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&lt;!--&nbsp;导航项目&nbsp;--&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;collapse&nbsp;navbar-collapse&nbsp;navbar-collapse-example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;右侧的导航项目&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&nbsp;navbar-nav&nbsp;navbar-right&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;帮助&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;your/nice/url&quot;&nbsp;class=&quot;dropdown-toggle&quot;&nbsp;data-toggle=&quot;dropdown&quot;&gt;探索&nbsp;&lt;b&nbsp;class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;dropdown-menu&quot;&nbsp;role=&quot;menu&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;敏捷开发&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;divider&quot;&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url&quot;&gt;探索宇宙&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/div&gt;&lt;!--&nbsp;END&nbsp;.navbar-collapse&nbsp;--&gt;
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>自适应宽度</h3></header>
+            <article>
+                <p>在<code>.nav</code>上添加<code>.nav-justified</code>。</p>
+                <div class="example">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <ul class="nav navbar-nav nav-justified">
+                            <li><a href="###">首页</a></li>
+                            <li><a href="###">项目</a></li>
+                            <li class="active"><a href="###">需求</a></li>
+                            <li><a href="###">测试</a></li>
+                            <li><a href="###">任务</a></li>
+                            <li><a href="###">论坛</a></li>
+                            <li><a href="###">帮助</a></li>
+                            <li><a href="###">探索</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;navbar&nbsp;navbar-default&quot;&nbsp;role=&quot;navigation&quot;&gt;
+&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&nbsp;navbar-nav&nbsp;nav-justified&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url/1&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;your/nice/url/2&quot;&gt;项目&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;your/nice/url/3&quot;&gt;需求&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <article>
+            <p>垂直菜单可以方便的为您的应用创建可折叠的菜单。</p>
+        </article>
+        <section>
+            <header><h3>三级菜单</h3></header>
+            <article>
+                <p>三级菜单和下文中的多栏目菜单均调用了superfish的菜单插件，必须配合此js使用</p>
+                <div class="example">
+                    <ul class="menu menu-basic" id="js-menu1" >
+                        <li class="current">
+                            <a href="#">产品变更</a>
+                            <ul>
+                                <li>
+                                    <a href="#">menu item</a>
+                                </li>
+                                <li class="current">
+                                    <a href="#">long menu item sets sub width</a>
+                                    <ul>
+                                        <li class="current"><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">营销执行</a>
+                        </li>
+                        <li>
+                            <a href="#">停复机</a>
+                            <ul>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">short</a></li>
+                                        <li><a href="#">short</a></li>
+                                        <li><a href="#">short</a></li>
+                                        <li><a href="#">short</a></li>
+                                        <li><a href="#">short</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu item</a>
+                                    <ul>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                        <li><a href="#">menu item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">业务受理</a>
+                        </li>
+                    </ul>
+                </div>
+                <pre>&lt;ul&nbsp;class=&quot;menu&nbsp;menu-basic&quot;&nbsp;id=&quot;js-menu1&quot;&nbsp;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;current&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;产品变更&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;menu&nbsp;item&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;current&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;long&nbsp;menu&nbsp;item&nbsp;sets&nbsp;sub&nbsp;width&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;current&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;menu&nbsp;item&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;menu&nbsp;item&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;营销执行&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;停复机&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;业务受理&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header><h3>多栏目菜单</h3></header>
+            <article>
+                <p>下拉弹窗的div只是样式占位，可以根据实际需求灵活添加html结构，比如table、ul等等</p>
+                <div class="example">
+                    <ul class="menu menu-mega" id="js-menu2">
+                        <li class="current">
+                            <a href="#">开户</a>
+                            <div class="menu-mega-box">
+                                <div style="min-height:100px;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">产品变更</a>
+                        </li>
+                        <li>
+                            <a href="#">营销执行</a>
+                            <div class="menu-mega-box">
+                                <div style="min-height:100px;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">缴费</a>
+                        </li>
+                        <li>
+                            <a href="#">停复机</a>
+                            <div class="menu-mega-box">
+                                <div style="min-height:100px;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">业务受理</a>
+                            <div class="menu-mega-box">
+                                <div style="min-height:100px;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">客户服务</a>
+                        </li>
+                        <li>
+                            <a href="#">营业报表</a>
+                            <div class="menu-mega-box">
+                                <div style="min-height:100px;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <pre>&lt;ul&nbsp;class=&quot;menu&nbsp;menu-mega&quot;&nbsp;id=&quot;js-menu2&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;current&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;开户&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;menu-mega-box&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;style=&quot;min-height:100px;&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;产品变更&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;营销执行&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;menu-mega-box&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;style=&quot;min-height:100px;&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&lt;/ul&gt;</pre>
+            </article>
+        </section>
+        <section class="">
+            <header>
+                <h3>垂直菜实例</h3>
+            </header>
+            <article>
+                <p>交互也使用了js，必要配套写js代码才会实现点击折叠效果</p>
+                <div class="example">
+                    <nav class="menu" data-toggle="menu" style="width: 280px">
+                        <button class="btn btn-primary"><i class="font-icon font-icon-edit"></i> CREATE</button>
+                        <button class="btn"><i class="font-icon font-icon-cloud-upload"></i> UPLOAD</button>
+                        <ul class="nav nav-primary">
+                            <li><a href="javascript:;"><i class="font-icon font-icon-th"></i> Dashboard</a></li>
+                            <li><a href="javascript:;"><i class="font-icon font-icon-user"></i> Me</a></li>
+                            <li class="nav-parent show">
+                                <a href="javascript:;"><i class="font-icon font-icon-clock-o"></i> Time<i class="font-icon font-icon-chevron-right nav-parent-fold-icon font-icon-rotate-90"></i></a>
+                                <ul class="nav" style="display: block;">
+                                    <li><a href="javascript:;">Today</a></li>
+                                    <li><a href="javascript:;">Tomarrow</a></li>
+                                    <li><a href="javascript:;">Yestorday</a></li>
+                                    <li><a href="javascript:;">This Week</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:;"><i class="font-icon font-icon-trash"></i> Trash</a></li>
+                            <li><a href="javascript:;"><i class="font-icon font-icon-list-ul"></i> All</a></li>
+                            <li class="active show nav-parent">
+                                <a href="javascript:;"><i class="font-icon font-icon-tasks"></i> Status<i class="font-icon font-icon-chevron-right nav-parent-fold-icon"></i></a>
+                                <ul class="nav">
+                                    <li><a href="javascript:;"><i class="font-icon font-icon-circle-blank"></i> Ready</a></li>
+                                    <li class="active"><a href="javascript:;"><i class="font-icon font-icon-play-sign"></i> Ongoing</a></li>
+                                    <li><a href="javascript:;"><i class="font-icon font-icon-ok-sign"></i> Completed</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <pre>&lt;nav&nbsp;class=&quot;menu&quot;&nbsp;data-toggle=&quot;menu&quot;&nbsp;style=&quot;width:&nbsp;280px&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;class=&quot;btn&nbsp;btn-primary&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-edit&quot;&gt;&lt;/i&gt;&nbsp;CREATE&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;class=&quot;btn&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-cloud-upload&quot;&gt;&lt;/i&gt;&nbsp;UPLOAD&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&nbsp;nav-primary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-th&quot;&gt;&lt;/i&gt;&nbsp;Dashboard&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-user&quot;&gt;&lt;/i&gt;&nbsp;Me&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;nav-parent&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-clock-o&quot;&gt;&lt;/i&gt;&nbsp;Time&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-chevron-right&nbsp;nav-parent-fold-icon&nbsp;font-icon-rotate-90&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&quot;&nbsp;style=&quot;display:&nbsp;block;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;Today&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;Tomarrow&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;Yestorday&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;This&nbsp;Week&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-trash&quot;&gt;&lt;/i&gt;&nbsp;Trash&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-list-ul&quot;&gt;&lt;/i&gt;&nbsp;All&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&nbsp;nav-parent&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-tasks&quot;&gt;&lt;/i&gt;&nbsp;Status&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-chevron-right&nbsp;nav-parent-fold-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;nav&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-circle-blank&quot;&gt;&lt;/i&gt;&nbsp;Ready&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;active&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-play-sign&quot;&gt;&lt;/i&gt;&nbsp;Ongoing&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-ok-sign&quot;&gt;&lt;/i&gt;&nbsp;Completed&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </article>
+        </section>
+        <p>本需要需要调用的js代码</p>
+        <pre>&lt;script&nbsp;src=&quot;../assets/js/umd/menu.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+function&nbsp;afterPageLoad()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;$('#pageContent&nbsp;.menu').menu();
+&nbsp;&nbsp;&nbsp;&nbsp;$('#pageContent&nbsp;.menu&nbsp;.nav&nbsp;li:not(&quot;.nav-parent&quot;)&nbsp;a').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$this&nbsp;=&nbsp;$(this);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.menu&nbsp;.nav&nbsp;.active').removeClass('active');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this.closest('li').addClass('active');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;parent&nbsp;=&nbsp;$this.closest('.nav-parent');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(parent.length)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent.addClass('active');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;example1&nbsp;=&nbsp;$(&quot;#js-menu1&quot;).superfish();
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;example2&nbsp;=&nbsp;$(&quot;#js-menu2&quot;).superfish();
+&nbsp;&nbsp;&nbsp;&nbsp;//example1.children('li:first').superfish('show');
+
+&nbsp;&nbsp;&nbsp;&nbsp;$('#pageContent').on('click',&nbsp;'.navbar-nav&nbsp;&gt;&nbsp;li&nbsp;&gt;&nbsp;a',&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$item&nbsp;=&nbsp;$(this).parent('li');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$item.parent().children('.active').removeClass('active');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$item.addClass('active');
+&nbsp;&nbsp;&nbsp;&nbsp;});
+}
+&lt;/script&gt;</pre>
+        <script src="../assets/plugins/menu/menu.js"></script>
+        <script>
+        function afterPageLoad() {
+            $('#pageContent .menu').menu();
+            $('#pageContent .menu .nav li:not(".nav-parent") a').click(function() {
+                var $this = $(this);
+                $('.menu .nav .active').removeClass('active');
+                $this.closest('li').addClass('active');
+                var parent = $this.closest('.nav-parent');
+                if (parent.length) {
+                    parent.addClass('active');
+                }
+            });
+            var example1 = $("#js-menu1").superfish();
+            var example2 = $("#js-menu2").superfish();
+            //example1.children('li:first').superfish('show');
+        
+            $('#pageContent').on('click', '.navbar-nav > li > a', function() {
+                var $item = $(this).parent('li');
+                $item.parent().children('.active').removeClass('active');
+                $item.addClass('active');
+            });
+        }
+        </script>
+    </div>
+</body>
+
+</html>

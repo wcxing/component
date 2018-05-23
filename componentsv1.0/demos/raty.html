@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>星级评分</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/plugins/raty/jquery.raty.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <a href="https://github.com/wbotelhos/raty">详情参考官网</a>
+        </article>
+        <section>
+            <header>
+                <h3>基本样式</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="rating1"></div>
+                </div>
+                <pre>HTML:<br>&lt;div&nbsp;id=&quot;rating1&quot;&gt;&lt;/div&gt;<br><br>Javascript:<br>$('#rating1').raty({ starType: 'i' });</pre>
+                <div class="example">
+                    <div id="rating2" data-score="3"></div>
+                </div>
+                <pre>HTML:<br>&lt;div&nbsp;id=&quot;rating2&quot;&nbsp;data-score=&quot;3&quot;&gt;&lt;/div&gt;<br><br>Javascript:<br>$('#rating2').raty({ starType: 'i' });</pre>
+                <div class="example">
+                    <div id="rating3"></div>
+                </div>
+                <pre>HTML:<br>&lt;div&nbsp;id=&quot;rating3&quot;&gt;&lt;/div&gt;<br><br>Javascript:<br>$('#rating3').raty({ starType: 'i', score: 5 });
+var score = $('#rating3').raty('score');
+console.log(score);</pre>
+
+                <h4>Options</h4>
+                <pre>cancel      : false                                          // Creates a cancel button to cancel the rating.
+cancelClass : 'raty-cancel'                                  // Name of cancel's class.
+cancelHint  : 'Cancel this rating!'                          // The cancel's button hint.
+cancelOff   : 'cancel-off.png'                               // Icon used on active cancel.
+cancelOn    : 'cancel-on.png'                                // Icon used inactive cancel.
+cancelPlace : 'left'                                         // Cancel's button position.
+click       : undefined                                      // Callback executed on rating click.
+half        : false                                          // Enables half star selection.
+halfShow    : true                                           // Enables half star display.
+hints       : ['bad', 'poor', 'regular', 'good', 'gorgeous'] // Hints used on each star.
+iconRange   : undefined                                      // Object list with position and icon on and off to do a mixed icons.
+mouseout    : undefined                                      // Callback executed on mouseout.
+mouseover   : undefined                                      // Callback executed on mouseover.
+noRatedMsg  : 'Not rated yet!'                               // Hint for no rated elements when it's readOnly.
+number      : 5                                              // Number of stars that will be presented.
+numberMax   : 20                                             // Max of star the option number can creates.
+path        : undefined                                      // A global locate where the icon will be looked.
+precision   : false                                          // Enables the selection of a precision score.
+readOnly    : false                                          // Turns the rating read-only.
+round       : { down: .25, full: .6, up: .76 }               // Included values attributes to do the score round math.
+score       : undefined                                      // Initial rating.
+scoreName   : 'score'                                        // Name of the hidden field that holds the score value.
+single      : false                                          // Enables just a single star selection.
+space       : true                                           // Puts space between the icons.
+starHalf    : 'star-half.png'                                // The name of the half star image.
+starOff     : 'star-off.png'                                 // Name of the star image off.
+starOn      : 'star-on.png'                                  // Name of the star image on.
+target      : undefined                                      // Element selector where the score will be displayed.
+targetFormat: '{score}'                                      // Template to interpolate the score in.
+targetKeep  : false                                          // If the last rating value will be keeped after mouseout.
+targetScore : undefined                                      // Element selector where the score will be filled, instead of creating a new hidden field (scoreName option).
+targetText  : ''                                             // Default text setted on target.
+targetType  : 'hint'                                         // Option to choose if target will receive hint o 'score' type.
+starType    : 'img'                                          // Element used to represent a star.
+                </pre>
+                <h4>Function</h4>
+                <pre>$('div').raty('score');                  // Get the current score.
+
+$('div').raty('score', number);          // Set the score.
+
+$('div').raty('click', number);          // Click on some star.
+
+$('div').raty('readOnly', boolean);      // Change the read-only state.
+
+$('div').raty('cancel', boolean);        // Cancel the rating. The last param force the click callback.
+
+$('div').raty('reload');                 // Reload the rating with the current configuration.
+
+$('div').raty('set', { option: value }); // Reset the rating with new configurations.
+
+$('div').raty('destroy');                // Destroy the bind and give you the raw element.
+
+$('div').raty('move', number);           // Move the mouse to the given score point position.</pre>
+            </article>
+        </section>
+    </div>
+    <script type="text/javascript" src="../assets/plugins/raty/jquery.raty.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#rating1').raty({ starType: 'i' });
+        $('#rating2').raty({ 
+            starType: 'i' ,
+            score: function() {
+                return $(this).attr('data-score');
+            }
+        });
+        $('#rating3').raty({ starType: 'i', score: 5 });
+        var score = $('#rating3').raty('score');
+        console.log(score);
+
+    })
+    </script>
+</body> 
+
+</html>

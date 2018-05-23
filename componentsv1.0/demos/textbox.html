@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文本框</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>基本类型</h3>
+            </header>
+            <article>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th width="200px">文本框</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" placeholder="用户名">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;用户名&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" class="form-control" placeholder="电子邮件">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;type=&quot;email&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;电子邮件&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" class="form-control" placeholder="密码">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;type=&quot;password&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;密码&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> 复选框
+                                    </label>
+                                </div>
+                                <div class="checkbox disabled">
+                                    <label>
+                                        <input type="checkbox" value="" disabled="disabled"> 被禁用的复选框 
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="alert alert-danger">单选和复选的input外层嵌套<code>&lt;label&gt;</code>标签,可以使点击文字的时候出发选中操作，此细节会提升用户体验！</p>
+                                <pre>&lt;div&nbsp;class=&quot;checkbox&quot;&gt;
+&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;checkbox&quot;&gt;&nbsp;复选框
+&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;</pre>
+                                <pre>&lt;div&nbsp;class=&quot;checkbox&nbsp;disabled&quot;&gt;
+&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;disabled&nbsp;type=&quot;checkbox&quot;&gt;&nbsp;被禁用的复选框
+&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radioOptionsExample"> 单选框1
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radioOptionsExample"> 单选框2
+                                    </label>
+                                </div>
+                                <div class="radio disabled">
+                                    <label>
+                                        <input type="radio" value="" disabled="disabled" name="radioOptionsExample"> 被禁用的单选框
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <pre>&lt;div&nbsp;class=&quot;radio&quot;&gt;
+&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;name=&quot;radioOptionsExample&quot;&nbsp;id=&quot;radioOptionsExample1&quot;&gt;&nbsp;单选框1
+&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;radio&quot;&gt;
+&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;name=&quot;radioOptionsExample&quot;&nbsp;id=&quot;radioOptionsExample2&quot;&gt;&nbsp;单选框2
+&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;</pre>
+                                <pre>&lt;div&nbsp;class=&quot;radio&nbsp;disabled&quot;&gt;&nbsp;
+&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;radio&quot;&nbsp;value=&quot;&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;name=&quot;radioOptionsExample&quot;&nbsp;id=&quot;radioOptionsExample3&quot;&gt;&nbsp;被禁用的单选框&nbsp;
+&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea class="form-control" rows="3" placeholder="可以输入多行文本"></textarea>
+                            </td>
+                            <td>
+                                <pre>&lt;textarea&nbsp;class=&quot;form-control&quot;&nbsp;rows=&quot;3&quot;&nbsp;placeholder=&quot;可以输入多行文本&quot;&gt;&lt;/textarea&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" value="" class="form-control">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;type=&quot;file&quot;&nbsp;class=&quot;form-control&quot;&nbsp;value=&quot;&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-control-file">
+                                    <label>
+                                        <input type="file" value="" class="form-control">
+                                        <input type="text" class="form-control" placeholder="选择文件">
+                                        <button class="btn btn-warning">浏览</button>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <p>用定位方式实现的文件选择，设置file输入框的透明度为0，实际点击的也是这个file输入框，必须使用<code>form-control-file</code>此结构才会有效果</p>
+                                <pre>&lt;div&nbsp;class=&quot;form-control-file&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;file&quot;&nbsp;value=&quot;&quot;&nbsp;class=&quot;form-control&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;选择文件&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;class=&quot;btn&nbsp;btn-warning&quot;&gt;浏览&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option value="">请选择一种水果</option>
+                                    <option value="apple">苹果</option>
+                                    <option value="banana">香蕉</option>
+                                    <option value="orange">桔子</option>
+                                </select>
+                            </td>
+                            <td>
+                                <pre>&lt;select&nbsp;class=&quot;form-control&quot;&gt;
+&nbsp;&nbsp;&lt;option&nbsp;value=&quot;&quot;&gt;请选择一种水果&lt;/option&gt;
+&nbsp;&nbsp;&lt;option&nbsp;value=&quot;apple&quot;&gt;苹果&lt;/option&gt;
+&nbsp;&nbsp;&lt;option&nbsp;value=&quot;banana&quot;&gt;香蕉&lt;/option&gt;
+&nbsp;&nbsp;&lt;option&nbsp;value=&quot;orange&quot;&gt;桔子&lt;/option&gt;
+&nbsp;&nbsp;...
+&lt;/select&gt;</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>文本框状态</h3>
+            </header>
+            <article>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th width="200px">文本框</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control" type="text" placeholder="此文本框被禁用" disabled="">
+                                <br>
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;class=&quot;form-control&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;此文本框被禁用&quot;&nbsp;disabled=&quot;&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control" autofocus="" type="text" placeholder="请激活此文本框">
+                                <br>
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;class=&quot;form-control&nbsp;form-focus&quot;&nbsp;autofocus&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;请激活此文本框&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="has-warning">
+                                    <input class="form-control" type="text" placeholder="好像不对。">
+                                </div>
+                                <br>
+                            </td>
+                            <td>
+                                <pre>&lt;div&nbsp;class=&quot;has-warning&quot;&gt;
+&nbsp;&nbsp;&lt;input&nbsp;class=&quot;form-control&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;好像不对。&quot;&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="has-error">
+                                    <input class="form-control" type="text" placeholder="错的。">
+                                </div>
+                                <br>
+                            </td>
+                            <td>
+                                <pre>&lt;div&nbsp;class=&quot;has-error&quot;&gt;
+&nbsp;&nbsp;&lt;input&nbsp;class=&quot;form-control&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;错的。&quot;&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="has-success">
+                                    <input class="form-control" type="text" placeholder="对的！">
+                                </div>
+                                <br>
+                            </td>
+                            <td>
+                                <pre>&lt;div&nbsp;class=&quot;has-success&quot;&gt;
+&nbsp;&nbsp;&lt;input&nbsp;class=&quot;form-control&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;对的！&quot;&gt;
+&lt;/div&gt;</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>尺寸</h3>
+            </header>
+            <article>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th width="200px">文本框</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-lg" type="text" placeholder="较大尺寸的文本框">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;class=&quot;form-control&nbsp;input-lg&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;较大尺寸的文本框&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control" type="text" placeholder="默认尺寸的文本框">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;class=&quot;form-control&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;默认尺寸的文本框&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text" placeholder="小尺寸的文本框">
+                            </td>
+                            <td>
+                                <pre>&lt;input&nbsp;class=&quot;form-control&nbsp;input-sm&quot;&nbsp;type=&quot;text&quot;&nbsp;placeholder=&quot;小尺寸的文本框&quot;&gt;</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section class="">
+            <header>
+                <h3>使用网格</h3>
+            </header>
+            <article>
+                <p>使用网格来使用水平布局。</p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-2">
+                        </div>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                        <div class="col-xs-5">
+                            <input type="text" class="form-control" placeholder=".col-xs-4">
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;row&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-3&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;.col-xs-2&quot;&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-4&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;.col-xs-3&quot;&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;col-xs-5&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&quot;&nbsp;placeholder=&quot;.col-xs-4&quot;&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

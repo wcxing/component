@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>paginator</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/interface.js"></script>
+    <script src="../assets/plugins/paginator/bootstrap-paginator.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article data-role="description">
+            <p>动态分页条是基于Bootstrap的js分页插件（bootstrap-paginator）制作的，它提供了一系列的参数用来支持用户的定制，提供了公共的方法可随时获得插件状态的改变，以及事件来监听用户的动作。</p>
+            <p><a href="https://github.com/lyonlai/bootstrap-paginator" target="_blank">github</a></p>
+            <p>css已合并到interface.css里，只需在页面引入<code>bootstrap-paginator.min.js</code>即可</p>
+        </article>
+        <section>
+            <header>
+                <h3>简单动态分页条</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10
+                        }
+                        $('#page-example').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;div id="page-example"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10
+    }
+    $('#page-example').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>组件结构</h3>
+            </header>
+            <article>
+                <p>组件结构如上图包括5中类型的操作按钮，如：首页(first)、尾页(last)、上一页(prev)、下一页(next) 、以及页(page)。当然这是默然的结构，我们可通过参数对结构及样式进行定制。</p>
+                <p><img src="../pic/paginator.png">
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>参数</h3>
+            </header>
+            <article>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>数据类型</th>
+                            <th>默认值</th>
+                            <th>描述</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>size</td>
+                            <td>string</td>
+                            <td>"normal"</td>
+                            <td>设置控件的显示大小，是个字符串. 允许的值: mini, small, normal,large。值：mini版的、小号的、正常的、大号的。</td>
+                        </tr>
+                        <tr>
+                            <td>alignment</td>
+                            <td>string</td>
+                            <td>"left"</td>
+                            <td>设置控件的对齐方式，是个字符串， 允许的值用： left, center andright. 即：左对齐、居中对齐、右对齐。</td>
+                        </tr>
+                        <tr>
+                            <td>itemContainerClass</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>该参数接收一个函数，返回一个字符串，该字符串是一个我们自定义的class类样式。当控件内的每个操纵按钮被渲染(render)时，都会调用该函数，同时把有关该按钮的信息作为参数传入。参数：type,page, current 。type为该控件的操作按钮的类型，如上图所示的五种类型：first、prev、page、next、last。page为该按钮所属第几页。current 指示整个控件的当前页是第几页。</td>
+                        </tr>
+                        <tr>
+                            <td>currentPage</td>
+                            <td>number</td>
+                            <td>1</td>
+                            <td>设置当前页</td>
+                        </tr>
+                        <tr>
+                            <td>numberOfPages</td>
+                            <td>number</td>
+                            <td>5</td>
+                            <td>设置控件显示的页码数.即：类型为"page"的操作按钮的数量。</td>
+                        </tr>
+                        <tr>
+                            <td>totalPages</td>
+                            <td>number</td>
+                            <td>1</td>
+                            <td>设置总页数</td>
+                        </tr>
+                        <tr>
+                            <td>pageUrl</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>实际上，控件内的每个操作按钮最终会被渲染成超链接，该参数的作用就是设置超链接的链接地址。该参数是个函数，参数为：type,page, current。这样我们就可以通过这个函数为每个操作按钮动态设置链接地址。如："http://example.com/list/page/"+page</td>
+                        </tr>
+                        <tr>
+                            <td>shouldShowPage</td>
+                            <td>boolean/function</td>
+                            <td>true</td>
+                            <td>该参数用于设置某个操作按钮是否显示，可是个布尔值也可是个函数。当为true时，显示。当为false时，不显示。如果该参数是个函数，需要返回个布尔值，通过这个返回值判断是否显示。函数有3个参数: type, page, current。使用函数的好处是，可以对每个操作按钮进行显示控制。</td>
+                        </tr>
+                        <tr>
+                            <td>itemTexts</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>控制每个操作按钮的显示文字。是个函数，有3个参数: type, page, current。通过这个参数我们就可以将操作按钮上的英文改为中文，如first-->首页，last-->尾页。</td>
+                        </tr>
+                        <tr>
+                            <td>tooltipTitles</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>设置操作按钮的title属性。是个函数，有3个参数: type, page, current。</td>
+                        </tr>
+                        <tr>
+                            <td>useBootstrapTooltip</td>
+                            <td>boolean</td>
+                            <td>false</td>
+                            <td>设置是否使用Bootstrap内置的tooltip。 true是使用，false是不使用,默认是不使用。注意：如果使用，则需要引入bootstrap-tooltip.js插件。</td>
+                        </tr>
+                        <tr>
+                            <td>bootstrapTooltipOptions</td>
+                            <td>object</td>
+                            <td></td>
+                            <td>Default:
+                            {
+                                animation: true,
+                                html: true,
+                                placement: 'top',
+                                selector: false,
+                                title: "",
+                                container: false
+                            }该参数是个js对象。当参数useBootstrapTooltip为true时，会将该对象传给Bootstrap的bootstrap-tooltip.js插件。</td>
+                        </tr>
+                        <tr>
+                            <td>onPageClicked</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>为操作按钮绑定click事件。回调函数的参数：event, originalEvent, type,page。</td>
+                        </tr>
+                        <tr>
+                            <td>onPageChanged</td>
+                            <td>function</td>
+                            <td></td>
+                            <td>为操作按钮绑定页码改变事件，回调函数的参数：event, oldPage, newPage。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>方法</h3>
+            </header>
+            <article>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>命令名</th>
+                            <th>参数</th>
+                            <th>返回值</th>
+                            <th>描述</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>show</td>
+                            <td>page</td>
+                            <td></td>
+                            <td>show命令用于直接跳转到特定的page，与直接点击操作按钮的效果是一样的。使用方法，如：$('#example').bootstrapPaginator("show",3) 直接跳转到第3页，$('#example').bootstrapPaginator("show",100)直接跳转到100页。 </td>
+                        </tr>
+                        <tr>
+                            <td>showFirst</td>
+                            <td></td>
+                            <td></td>
+                            <td>showFirst 命令用于直接跳转到首页，与点击first按钮相同。使用方法：$('#example').bootstrapPaginator("showFirst") </td>
+                        </tr>
+                        <tr>
+                            <td>showPrevious</td>
+                            <td></td>
+                            <td></td>
+                            <td>showPrevious 命令用于直接跳转到上一页。使用方法：$('#example').bootstrapPaginator("showPrevious") </td>
+                        </tr>
+                        <tr>
+                            <td>showNext</td>
+                            <td></td>
+                            <td></td>
+                            <td>showNext命令用于直接跳转到下一页。</td>
+                        </tr>
+                        <tr>
+                            <td>showLast</td>
+                            <td></td>
+                            <td></td>
+                            <td>showLast 命令用于直接跳转到上一页。</td>
+                        </tr>
+                        <tr>
+                            <td>getPages</td>
+                            <td></td>
+                            <td>object</td>
+                            <td>getPages命令用于返回当前控件中显示的页码，以数组形式返回。使用方法：var arra = $('#example').bootstrapPaginator("getPages") </td>
+                        </tr>
+                        <tr>
+                            <td>setOptions</td>
+                            <td>object</td>
+                            <td></td>
+                            <td>setOptions 命令用于重新设置参数，使用方法：$('#example').bootstrapPaginator("setOptions",newoptions)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>事件</h3>
+            </header>
+            <article>
+                <p>Bootstrap Paginator 提供了俩个事件：page-clicked和page-changed。这俩个事件作为参数使用，分别对应onPageClicked和onPageChanged。</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>事件名</th>
+                            <th>回调函数</th>
+                            <th>描述</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>page-clicked</td>
+                            <td>function(event, originalEvent, type, page)</td>
+                            <td>参数event, originalEvent是俩个jquery事件对象，可参考jquery相关文档</td>
+                        </tr>
+                        <tr>
+                            <td>page-changed</td>
+                            <td>function(event, oldPage, newPage)</td>
+                            <td>同上文</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>尺寸</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example-size"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10,
+                            size: 'small' //其他尺寸见参数介绍部分
+                        }
+                        $('#page-example-size').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;div id="page-example-size"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10,
+        size: 'mini' //其他尺寸见参数介绍部分
+    }
+    $('#page-example-size').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>水平位置</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example-align"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10,
+                            alignment: 'center' //其他见参数介绍部分
+                        }
+                        $('#page-example-align').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;div id="page-example-align"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10,
+        alignment: 'center' //其他见参数介绍部分
+    }
+    $('#page-example-align').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>按钮tooltipTitles</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example-title"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10,
+                            tooltipTitles: function (type, page, current) {
+                                switch (type) {
+                                    case "first":
+                                        return "首页";
+                                    case "prev":
+                                        return "上一页";
+                                    case "next":
+                                        return "下一页";
+                                    case "last":
+                                        return "最后一页";
+                                    case "page":
+                                        return "第" + page + "页";
+                                }
+                            }
+                        }
+                        $('#page-example-title').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;div id="page-example-title"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10,
+        tooltipTitles: function (type, page, current) {
+            switch (type) {
+                case "first":
+                    return "首页";
+                case "prev":
+                    return "上一页";
+                case "next":
+                    return "下一页";
+                case "last":
+                    return "最后一页";
+                case "page":
+                    return "第" + page + "页";
+                }
+            }
+        }
+    }
+    $('#page-example-title').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>用Bootstrap的Tooltip</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example-tip"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10,
+                            useBootstrapTooltip:true,
+                            tooltipTitles: function (type, page, current) {
+                                switch (type) {
+                                    case "first":
+                                        return "首页";
+                                    case "prev":
+                                        return "上一页";
+                                    case "next":
+                                        return "下一页";
+                                    case "last":
+                                        return "最后一页";
+                                    case "page":
+                                        return "第" + page + "页";
+                                }
+                            }
+                        }
+                        $('#page-example-tip').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;div id="page-example-tip"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10,
+        useBootstrapTooltip:true,
+        tooltipTitles: function (type, page, current) {
+            switch (type) {
+                case "first":
+                    return "首页";
+                case "prev":
+                    return "上一页";
+                case "next":
+                    return "下一页";
+                case "last":
+                    return "最后一页";
+                case "page":
+                    return "第" + page + "页";
+            }
+        }
+    }
+    $('#page-example-tip').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>itemContainerClass的配置</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <style type="text/css">
+                        .pointer-cursor {
+                            cursor: pointer;
+                        }
+                    </style>
+                    <div id="page-example-class"></div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 3,
+                            totalPages: 10,
+                            itemContainerClass: function (type, page, current) {
+                                return (page === current) ? "active" : "pointer-cursor";
+                            }
+                        }
+                        $('#page-example-class').bootstrapPaginator(options);
+                    </script>
+                </div>
+                <pre>
+&lt;style type="text/css"&gt;
+    .pointer-cursor {
+        cursor: pointer;
+    }
+&lt;/style&gt;
+&lt;div id="page-example-class"&gt;&lt;/div&gt;
+&lt;script type='text/javascript'&gt;
+    var options = {
+        currentPage: 3,
+        totalPages: 10,
+        itemContainerClass: function (type, page, current) {
+            return (page === current) ? "active" : "pointer-cursor";
+        }
+    }
+    $('#page-example-class').bootstrapPaginator(options);
+&lt;/script&gt;
+                </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>复杂分页</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div id="page-example-all-cont">这里显示第 <span>1</span> 页数据</div>
+                    <div class="pagination-all pagination-right">
+                        <div id="page-example-all"></div>
+                        <span>共 10 页,</span>
+                        <span class="form-inline">到第<input id="page-example-all-ipt" type="text" class="form-control page-num-input" value="" />页</span>
+                        <button class="btn" type="button" id="page-example-all-sure">确定</button>
+                    </div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 1,
+                            totalPages: 10,
+                            tooltipTitles: function (type, page, current) {
+                                switch (type) {
+                                    case "first":
+                                        return "首页";
+                                    case "prev":
+                                        return "上一页";
+                                    case "next":
+                                        return "下一页";
+                                    case "last":
+                                        return "最后一页";
+                                    case "page":
+                                        return "第" + page + "页";
+                                }
+                            },
+                            onPageClicked: function(e,originalEvent,type,page){
+                                $("#page-example-all-cont span").html(page);
+                            }
+                        }
+                        $('#page-example-all').bootstrapPaginator(options);
+                        $('#page-example-all-sure').on('click', function(event) {
+                            event.preventDefault();
+                            var val = $("#page-example-all-ipt").val();
+                            if(val!=""){
+                                $('#page-example-all').bootstrapPaginator("show", val);
+                                $("#page-example-all-cont span").html(val);
+                            }
+                        });
+                    </script>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>复杂分页table</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <table id="page-example-table-cont" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>这是第1页数据</td>
+                                <td>Sunshine</td>
+                                <td>Sunday</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>这是第1页数据</td>
+                                <td>Sunday</td>
+                                <td>Sunshine</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>这是第1页数据</td>
+                                <td>catouse</td>
+                                <td>azhi</td>
+                                <td>zenUI</td>
+                            </tr>
+                            <tr>
+                                <td>这是第1页数据</td>
+                                <td>God</td>
+                                <td>Lady Gaga</td>
+                                <td>catouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination-all pagination-right">
+                        <div id="page-example-table"></div>
+                        <span>共 10 页,</span>
+                        <span class="form-inline">到第<input id="page-example-table-ipt" type="text" class="form-control page-num-input" value="" />页</span>
+                        <button class="btn" type="button" id="page-example-table-sure">确定</button>
+                    </div>
+                    <script type='text/javascript'>
+                        var options = {
+                            currentPage: 1,
+                            totalPages: 10,
+                            tooltipTitles: function (type, page, current) {
+                                switch (type) {
+                                    case "first":
+                                        return "首页";
+                                    case "prev":
+                                        return "上一页";
+                                    case "next":
+                                        return "下一页";
+                                    case "last":
+                                        return "最后一页";
+                                    case "page":
+                                        return "第" + page + "页";
+                                }
+                            },
+                            onPageClicked: function(e,originalEvent,type,page){
+                                getData(page);
+                            }
+                        }
+                        $('#page-example-table').bootstrapPaginator(options);
+                        $('#page-example-table-sure').on('click', function(event) {
+                            event.preventDefault();
+                            var val = $("#page-example-table-ipt").val();
+                            if(val!=""){
+                                $('#page-example-table').bootstrapPaginator("show", val);
+                                getData(val);
+                            }
+                        });
+
+                        function getData(page){
+                            var tbody = $("#page-example-table-cont tbody"),
+                                html = [];
+                            for (var i=0;i<4;i++) {
+                                html.push('<tr>');
+                                    html.push('<td>这是第'+page+'页数据</td>');
+                                    html.push('<td>God</td>');
+                                    html.push('<td>Lady Gaga</td>');
+                                    html.push('<td>catouse</td>');
+                                html.push('</tr>');
+                            }
+                            tbody.html(html.join(""));
+                        }
+                    </script>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

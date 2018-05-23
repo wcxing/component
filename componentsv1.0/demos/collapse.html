@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>折叠（Collapse）</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>折叠（Collapse）插件可以很容易地让页面区域折叠起来。无论您用它来创建折叠导航还是内容面板，它都允许很多内容选项。</article>
+        <section>
+            <header>
+                <h3>简单折叠</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href=".collapseExample">
+                        用a标签href触发
+                    </a>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".collapseExample">
+                        用button标签data-target触发
+                    </button>
+                    <div class="collapseExample collapse in" id="">
+                      <div class="well">
+                        简单折叠
+                      </div>
+                    </div>
+                </div>
+                <pre>&lt;a class="btn btn-primary" role="button" data-toggle="collapse" href=".collapseExample"&gt;
+    用a标签href触发
+&lt;/a&gt;
+&lt;button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".collapseExample"&gt;
+    用button标签data-target触发
+&lt;/button&gt;
+&lt;div class="collapseExample collapse in" id=""&gt;
+  &lt;div class="well"&gt;
+    简单折叠
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>可折叠面板组</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" href=".collapseOne" data-parent=".panel-group">
+                                            面板标题1
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="collapseOne panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            面板内容1
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                            <a data-toggle="collapse" href=".collapseTwo" data-parent=".panel-group">
+                                            面板标题2
+                                            </a>
+                                      </h4>
+                                    </div>
+                                    <div class="collapseTwo panel-collapse collapse">
+                                        <div class="panel-body">
+                                            面板内容2
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href=".collapseThree" data-parent=".panel-group">
+                                                面板标题3
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="collapseThree panel-collapse collapse">
+                                        <div class="panel-body">
+                                            面板内容3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-group" id="example">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse" href=".collapseOne" data-parent=".panel-group">
+                                            面板标题1
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="collapseOne panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            面板内容1
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      <h4 class="panel-title">
+                                            <a data-toggle="collapse" href=".collapseTwo" data-parent=".panel-group">
+                                            面板标题2
+                                            </a>
+                                      </h4>
+                                    </div>
+                                    <div class="collapseTwo panel-collapse collapse">
+                                        <div class="panel-body">
+                                            面板内容2
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href=".collapseThree" data-parent=".panel-group">
+                                                面板标题3
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="collapseThree panel-collapse collapse">
+                                        <div class="panel-body">
+                                            面板内容3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <pre>&lt;div class="panel-group"&gt;
+    &lt;div class="panel panel-default"&gt;
+        &lt;div class="panel-heading"&gt;
+            &lt;h4 class="panel-title"&gt;
+                &lt;a role="button" data-toggle="collapse" href=".collapseOne" data-parent=".panel-group"&gt;
+                面板标题1
+                &lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div class="collapseOne panel-collapse collapse in"&gt;
+            &lt;div class="panel-body"&gt;
+                面板内容1
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="panel panel-default"&gt;
+        &lt;div class="panel-heading"&gt;
+          &lt;h4 class="panel-title"&gt;
+                &lt;a data-toggle="collapse" href=".collapseTwo" data-parent=".panel-group"&gt;
+                面板标题2
+                &lt;/a&gt;
+          &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div class="collapseTwo panel-collapse collapse"&gt;
+            &lt;div class="panel-body"&gt;
+                面板内容2
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="panel panel-default"&gt;
+        &lt;div class="panel-heading"&gt;
+            &lt;h4 class="panel-title"&gt;
+                &lt;a data-toggle="collapse" href=".collapseThree" data-parent=".panel-group"&gt;
+                    面板标题3
+                &lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div class="collapseThree panel-collapse collapse"&gt;
+            &lt;div class="panel-body"&gt;
+                面板内容3
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+
+        <section>
+            <header>
+                <h3>用法</h3>
+            </header>
+            <article>
+                <div>
+                    <p>该组件的js已合并到<code>interface.js</code>，如单独使用可引用<code>collapse.js</code></p>
+                    <p><code>.collapse</code>隐藏内容，<code>.collapse .in</code>显示内容</p>
+                    <p>调用方式一：仅仅通过向页面元素添加 <code>data-toggle="collapse"</code> 和 <code>data-target</code> 就可以为其赋予控制可折叠页面元素的能力。 <code>data-target</code> 属性接受一个CSS选择器作为其控制对象。请确保为可折叠页面元素添加 <code>.collapse</code> 。 如果你希望可折叠页面元素的默认状态是展开的，请添加 <code>.in</code> 。 为了给一组可折叠页面元素添加控制器，添加 <code>data-parent=".selector"</code>,并确保这一组可折叠被名为<code>.selector</code>所包裹即可，如上面实例中的<code>data-parent=".panel-group"</code>。</p>
+                    <p>调用方式二：手动触发 $(".collapse").collapse()</p>
+                </div>
+            </article>
+        </section>
+        
+        <section>
+            <header>
+                <h3>方法和事件</h3>
+            </header>
+            <article>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>使用</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>.collapse(options)</td>
+                                <td><code>$('#myCollapse').collapse({ toggle: false })</code></td>
+                                <td>赋予页面元素可折叠功能。接受一个可选的object作为参数。</td>
+                            </tr>
+                            <tr>
+                                <td>.collapse('toggle')</td>
+                                <td><code>$('#myCollapse').collapse('toggle')</code></td>
+                                <td>展示或隐藏一个可折叠的页面元素。</td>
+                            </tr>
+                            <tr>
+                                <td>.collapse('show')</td>
+                                <td><code>$('#myCollapse').collapse('show')</code></td>
+                                <td>展示一个可折叠的页面元素。</td>
+                            </tr>
+                            <tr>
+                                <td>.collapse('hide')</td>
+                                <td><code>$('#myCollapse').collapse('hide')</code></td>
+                                <td>隐藏一个可折叠的页面元素。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>事件</th>
+                                <th>使用</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>show.bs.collapse</td>
+                                <td><code>$('#myCollapse').on('show.bs.collapse', function () { // do something… })</code></td>
+                                <td>当 <code>show</code> 方法被调用时，此事件将被立即触发</td>
+                            </tr>
+                            <tr>
+                                <td>shown.bs.collapse</td>
+                                <td><code>$('#myCollapse').on('shown.bs.collapse', function () { // do something… })</code></td>
+                                <td>当可折叠页面元素显示出来之后（同时CSS过渡效果也已执行完毕），此事件被触发。</td>
+                            </tr>
+                            <tr>
+                                <td>hide.bs.collapse</td>
+                                <td><code>$('#myCollapse').on('hide.bs.collapse', function () { // do something… })</code></td>
+                                <td>当 <code>hide</code> 方法被调用时，此事件将被立即触发。</td>
+                            </tr>
+                            <tr>
+                                <td>hidden.bs.collapse</td>
+                                <td><code>$('#myCollapse').on('hidden.bs.collapse', function () { // do something… })</code></td>
+                                <td>当可折叠页面元素隐藏之后（同时CSS过渡效果也已执行完毕），此事件被触发。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+    </div>
+</body>
+
+</html>

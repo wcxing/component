@@ -1,0 +1,17 @@
+//插件bootstrap-paginator.js的css样式,.pagination ul的样式在_pagination.scss
+.pagination-all .pagination{display: inline-block;vertical-align: middle;}
+.pagination-all .page-num-input{width: 45px;text-align: center;}
+.pagination ul{margin: 0;}
+.pagination-centered {
+  text-align: center;
+}
+
+.pagination-right {
+  text-align: right;
+}
+
+.pagination-mini ul > li > a,
+.pagination-mini ul > li > span {
+  padding: 0 6px;
+  font-size: 10.5px;
+}

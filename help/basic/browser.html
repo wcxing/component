@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>button</title>
+    <!-- Bootstrap -->
+    <link href="../../componentsv1.0/assets/css/doc.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <script src="../../componentsv1.0/assets/js/prettify/run_prettify.js"></script>
+    <script src="../../componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../../componentsv1.0/assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>受支持的平台</h3>
+            </header>
+            <article>
+                <h4>桌面浏览器</h4>
+                <ul>
+                    <li>IE8+</li>
+                    <li>Opera 12+</li>
+                    <li>Firefox 4+</li>
+                    <li>Safari 5+</li>
+                    <li>Chrome 10+</li>
+                </ul>
+                <h4>移动浏览器</h4>
+                <ul>
+                    <li>IOS 4+ Safari</li>
+                    <li>Chrome for Android</li>
+                    <li>Chrome for IOS</li>
+                    <li>Chrome for Android</li>
+                    <li>Windows Phone 8+ IE</li>
+                </ul>
+                <div class="alert alert-warning-inverse">
+                    <p>在最新的浏览器都能获得最佳体验，但一些古老的浏览器上（例如IE8）Interface中的部分特性（例如圆角或阴影效果）无法使用。</p>
+                </div>
+            </article>
+        </section>
+        <article>
+            <p>因为IE浏览器与各大浏览器区别太大，为了尽可能的保证在所有浏览器中有一致的体验，很多时候需要单独对待IE浏览器。Interface 支持最早的IE浏览器为IE8，但需要进行一些特殊配置。</p>
+            <p>如果你准备支持的IE浏览器最低版本为IE9，则可以忽略此章节。但建议为早期用户准备一个提示。</p>
+        </article>
+        <section>
+            <header>
+                <h3>禁用IE兼容模式</h3>
+            </header>
+            <article>
+                <p>为了保证IE能够使用最新渲染模式而不是兼容模式，在html文档头部应加入以下代码：</p>
+                <pre class="prettyprint prettyprinted">
+    &lt;head&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;charset=&quot;utf-8&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;http-equiv=&quot;X-UA-Compatible&quot;&nbsp;content=&quot;IE=edge&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+                    </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>提示IE7及更早的用户</h3></header>
+            <article>
+                <p>针对IE7及更早的版本，应该给出提示，让用户升级浏览器。在<code>body</code>之后加入以下代码可以有选择性的出现浏览器升级提示，并给出链接引导用户访问<a href="http://browsehappy.com/">browsehappy.com</a>：</p>
+                <pre class="prettyprint prettyprinted">
+&lt;body&gt;
+&nbsp;&nbsp;&lt;!--[if&nbsp;lt&nbsp;IE&nbsp;8]&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger&quot;&gt;您正在使用&nbsp;&lt;strong&gt;过时的&lt;/strong&gt;&nbsp;浏览器.&nbsp;是时候&nbsp;&lt;a&nbsp;href=&quot;http://browsehappy.com/&quot;&gt;更换一个更好的浏览器&lt;/a&gt;&nbsp;来提升用户体验.&lt;/div&gt;
+&nbsp;&nbsp;&lt;![endif]--&gt;
+&nbsp;&nbsp;...
+                    </pre>
+                <p>如果你准备支持的IE浏览器最低版本为IE9，也建议为早期用户准备一个提示，只需要将以上代码中的 <code>[if lt IE 8]</code> 更改为 <code>[if lt IE 9]</code>。</p>
+                <div class="alert alert-primary-inverse">
+                    <h4>提示</h4>
+                    <p>现在开始，你可以使用Interface内置的浏览器兼容辅助插件来展示这样的提示。具体用法请参考 <a href="#basic/browser/1" class="alert-link">“浏览器可用性/浏览器检查”</a> 章节。</p>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>IE8用户</h3></header>
+            <article>
+                <p>在 <code>dist/lib/ieonly/</code> 中准备了一些 Polyfill 脚本来兼容IE8浏览器。</p>
+                <p>因为IE8及早期版本不支持HTML5标签，所以针对IE8浏览器，我们引入html5shiv来使得HTML5标签在IE8中也能使用。在HTML文档的script区域加入以下代码：</p>
+                <pre class="prettyprint prettyprinted">&lt;!--[if&nbsp;lt&nbsp;IE&nbsp;9]&gt;
+&nbsp;&nbsp;&lt;script&nbsp;src=&quot;dist/lib/ieonly/html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</pre>
+                <p>因为IE8及早期版本同样不支持media query来实现响应式布局，我们同样可以通过条件注释引入respond.js来帮助ie实现该功能。
+                </p>
+                <pre class="prettyprint prettyprinted">&lt;!--[if lt IE 9]&gt;
+  &lt;script src="dist/lib/ieonly/respond.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</pre>
+                <p>因为IE8及早期版本不支持Canvas，如果你的产品用到Interface中的 <a href="#view/chart">图表</a> 视图，则需要引入 <a href="https://code.google.com/p/explorercanvas/" target="_blank">ExplorerCanvas</a> 来支持绘图功能。</p>
+                <pre class="prettyprint prettyprinted">&lt;!--[if lt IE 9]&gt;
+  &lt;script src="dist/lib/ieonly/excanvas.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

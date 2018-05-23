@@ -1,0 +1,11 @@
+.date-picker{	
+	background-image: url(datePicker.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+.date-picker::-ms-clear{display:none;}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

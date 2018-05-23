@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>布局</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+<!--    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>-->
+    <style type="text/css">
+    .layout-example-box{
+        width:100%;
+        height:100px;
+        text-align: center;
+        line-height: 100px;
+        font-size:16px;
+        background-color: #dadada;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>比例布局</h3>
+            </header>
+            <article>
+            
+            <div class="example">
+				<h4>栅格布局</h4>
+                <div class="row layout-example-box"> 栅格布局 </div>
+                    <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;&lt;/div&gt;</pre>
+			</div>
+
+            
+                <div class="example">
+                    <h4>布局 33% - 33% - 33%</h4>
+                  <div class="row">
+                        <div class="col-xs-8">
+                            <div class="layout-example-box">.col-xs-8</div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="layout-example-box">.col-xs-8</div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="layout-example-box">.col-xs-8</div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-8&quot;&gt;col-xs-8&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-8&quot;&gt;col-xs-8&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-8&quot;&gt;col-xs-8&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+                <div class="example">
+                    <h4>布局 25% - 50% - 25%</h4>
+                  <div class="row">
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="layout-example-box">.col-xs-12</div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                        </div>
+                    </div>
+                    <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-12&quot;&gt;col-xs-12&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+          <div class="example">
+                    <h4>布局 25% - 25% - 25% - 25%</h4>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                      </div>
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                      </div>
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                      </div>
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                        </div>
+                    </div>
+              <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>&lt;/div&gt;</pre>
+            </div>
+                <div class="example">
+                    <h4>布局 50% - 50%</h4>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="layout-example-box">.col-xs-12</div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="layout-example-box">.col-xs-12</div>
+                        </div>
+                    </div>
+                    <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-12&quot;&gt;col-xs-12&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-12&quot;&gt;col-xs-12&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+                <div class="example">
+                    <h4>布局 25% - 75%</h4>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                      </div>
+                        <div class="col-xs-18">
+                            <div class="layout-example-box">.col-xs-18</div>
+                        </div>
+                    </div>
+                    <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-18&quot;&gt;col-xs-18&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+            
+              <div class="example">
+                    <h4>布局 75% - 25%</h4>
+                <div class="row">
+                        <div class="col-xs-18">
+                            <div class="layout-example-box">.col-xs-18</div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="layout-example-box">.col-xs-6</div>
+                        </div>
+                  </div>
+                  <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-18&quot;&gt;col-xs-18&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-6&quot;&gt;col-xs-6&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+              <div class="example">
+                    <h4>布局 35% - 65%</h4>
+                <div class="row">
+          <div class="col-xs-8">
+                            <div class="layout-example-box">.col-xs-8</div>
+                        </div>
+          <div class="col-xs-16">
+                            <div class="layout-example-box">.col-xs-16</div>
+                        </div>
+                 </div>
+                 <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-8&quot;&gt;col-xs-8&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-16&quot;&gt;col-xs-16&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+          <div class="example">
+                    <h4>布局 65% - 35%</h4>
+                    <div class="row">
+                        <div class="col-xs-16">
+                            <div class="layout-example-box">.col-xs-16</div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="layout-example-box">.col-xs-8</div>
+                        </div>
+                    </div>
+             <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;row&quot;&gt;<br>  &lt;div class=&quot;col-xs-16&quot;&gt;col-xs-16&lt;/div&gt;<br>  &lt;div class=&quot;col-xs-8&quot;&gt;col-xs-8&lt;/div&gt;<br>&lt;/div&gt;</pre>
+            </div>
+                
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>固定宽度+自适配宽度布局<small>（采用display:table属性布局）</small></h3>
+            </header>
+            <article>
+              <div class="example">
+                    <h4>布局 220+适配+220</h4>
+                <div class="layout-container">
+                        <div class="col-aside">
+                            <div class="layout-example-box">宽度220px</div>
+                        </div>
+                        <div class="col-main">
+                            <div class="layout-example-box">自适应</div>
+                        </div>
+                        <div class="col-aside">
+                            <div class="layout-example-box">宽度220px</div>
+                        </div>
+                  </div>
+                  <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;layout-container&quot;&gt;<br>  &lt;div class=&quot;col-aside&quot;&gt;宽度220px&lt;/div&gt;<br>  &lt;div class=&quot;col-main&quot;&gt;自适应&lt;/div&gt;<br>  &lt;div class=&quot;col-aside&quot;&gt;宽度220px&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+              <div class="example">
+                    <h4>布局 220+适配</h4>
+                <div class="layout-container">
+                        <div class="col-aside">
+                            <div class="layout-example-box">宽度220px</div>
+                        </div>
+                        <div class="col-main">
+                            <div class="layout-example-box">自适应</div>
+                        </div>
+                  </div>
+                  <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;layout-container&quot;&gt;<br>  &lt;div class=&quot;col-aside&quot;&gt;宽度220px&lt;/div&gt;<br>  &lt;div class=&quot;col-main&quot;&gt;自适应&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+              <div class="example">
+                    <h4>布局 自定义宽度+适配</h4>
+                <div class="layout-container">
+                        <div class="col-aside" style="width:200px">
+                            <div class="layout-example-box">宽度200px</div>
+                        </div>
+                        <div class="col-main">
+                            <div class="layout-example-box">自适应</div>
+                        </div>
+                  </div>
+                  <pre class="prettyprint lang-js prettyprinted mgt-md">&lt;div class=&quot;layout-container&quot;&gt;<br>  &lt;div class=&quot;col-aside&quot; style=&quot;width:200px&quot;&gt;宽度200px&lt;/div&gt;<br>  &lt;div class=&quot;col-main&quot;&gt;自适应&lt;/div&gt;<br>&lt;/div&gt;</pre>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

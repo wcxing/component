@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>文件目录结构</title>
+    <!-- Bootstrap -->
+    <link href="../../componentsv1.0/assets/css/doc.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <script src="../../componentsv1.0/assets/js/prettify/run_prettify.js"></script>
+    <script src="../../componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../../componentsv1.0/assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section class="">
+            <header>
+                <h3>文件目录结构</h3>
+            </header>
+            <article class="font-sm">
+                <p>下载预编译压缩包解压后将会得到以下目录结构：</p>
+                <pre class="prettyprint lang-js prettyprinted">
+Interface/
+├── pub-ui/
+│    │
+│    ├── css/
+│    │   ├── interface.css                //编译后css文件
+│    │   ├── interface.min.css            //压缩版本css文件，建议引用压缩版本
+│    │   ├── font-awesome.css             //字体图标css文件
+│    │   ├── font-awesome.min.css         //压缩版本字体图标css文件
+│    │   └── style.css                    //自定义样式文件
+│    ├── js/
+│    │   ├── interface.js                 //编译后js文件
+│    │   ├── interface.min.js             //压缩版本js文件，建议引用压缩版本
+│    │   ├── jquery.min.js                //jquery文件
+│    │   └── ieonly/                      //针对IE8及早期版本兼容处理的js文件
+│    ├── fonts/                           //框架所需字体文件
+│    └── plugins/                         //第三方库文件
+└── pub-page/
+     └── demo.html                        //基础页面结构demo
+
+                </pre>
+
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>button</title>
+    <!-- Bootstrap -->
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article data-role="description">
+            <p>按钮是用来触发一些动作。通常用在表单、对话框、菜单上面。好的按钮设计能够引导用户高效的达到目的。</p>
+            <div hidden>
+                <code target="category">基础组件</code>
+                <code target="css">interface.css</code>
+                <code target="js">interface.js</code>
+            </div>
+        </article>
+        <!-- 
+    统一术语：component-组件，widget-控件
+      component表示一类组件（如按钮）；
+      widget表示此组件下的不同形态控件（a标签按钮，button标签按钮）
+    此处的控件会被同步到控件库，按照控件的类型同步成不同的控件，最终会在配置平台的控件区域展示
+    请注意此处的'data-***'的属性，在扩展的时候应该按照此类规律进行扩展，不可随意改动此处的属性值或属性位置
+
+  data-***属性说明如下：
+    data-configures：组件对应的配置文件，目录为：RWD\componentsv1.0\configure
+    data-role: 容器属性，值定义如下
+    |- component: 容器内为此组件的同步内容
+    |- case：     表示实例代码容器
+    |- widget：   此容器内为一个独立的控件实例
+    |- code：     控件实例代码，组件同步的时候会自动解析，存储到数据库
+    data-configure: 表示控件的label，为了方便命名，统一采用" 'widget'+数字 "的方式命名（唯一），此处控件名对应配置文件中的二级节点
+  -->
+        <section data-role="component" data-configures="button.json">
+            <header>
+                <h4>控件类型</h4>
+            </header>
+            <article>
+                <table class="table demo-table" data-role="case">
+                    <tbody>
+                        <tr>
+                            <th class="col-md-4">实例</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr data-role="widget" data-configure="widget1">
+                            <td data-role="code">
+                                <button class="btn btn-primary" type="button">button按钮</button>
+                                <br>
+                                <br>
+                                <a class="btn btn-primary" href="">a按钮</a>
+                                <br>
+                                <br>
+                                <input class="btn btn-primary" type="button" value="input按钮">
+                            </td>
+                            <td>
+                                <pre>&lt;button class=&quot;btn btn&quot; type="button"&gt;button按钮&lt;/button&gt;<br>&lt;a class=&quot;btn btn-link&quot; href=&quot;your/url/&quot;&gt;a按钮&lt;/a&gt;<br>&lt;input class=&quot;btn btn-primary&quot; type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</pre>
+                                <p>页面上的普通按钮，例如取消表单、重置输入等。</p>
+                            </td>
+                        </tr>
+                        <tr data-role="widget" data-configure="widget2">
+                            <td data-role="code"><button class="btn" type="button">标准按钮</button></td>
+                            <td>
+                                <pre>&lt;button&nbsp;class=&quot;btn&quot;&nbsp;type=&quot;button&quot;&gt;标准按钮&lt;/button&gt;</pre>
+                                <p>页面上的普通按钮，例如取消表单、重置输入等。</p>
+                            </td>
+                        </tr>
+                        <tr data-role="widget" data-configure="widget2">
+                            <td data-role="code"><button class="btn btn-link" type="button">链接按钮</button></td>
+                            <td>
+                                <pre>&lt;button&nbsp;class=&quot;btn&nbsp;btn-link&quot;&nbsp;type=&quot;button&quot;&gt;链接按钮&lt;/button&gt;</pre>
+                                <p>链接按钮的外观和超链接一样，所不同的是用户点击时不是导向超链接指示的地址，而是触发一个操作。<br>链接按钮通常用于页面上的次要操作，例如取消表单。</p>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h4>控件尺寸</h4>
+            </header>
+            <article>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th class="col-md-4">实例</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-lg">大按钮</button>
+                            </td>
+                            <td>
+                                <p>大按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary btn-lg&quot; type=&quot;button&quot;&gt;大按钮&lt;/button&gt;</pre>
+                                <p>大尺寸按钮</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary">普通按钮</button>
+                            </td>
+                            <td>
+                                <p>普通按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;普通按钮&lt;/button&gt;</pre>
+                                <p>正常尺寸按钮</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm">小按钮</button>
+                            </td>
+                            <td>
+                                <p>小按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary btn-sm&quot; type=&quot;button&quot;&gt;小按钮&lt;/button&gt;</pre>
+                                <p>小尺寸按钮</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h4>控件形态</h4>
+            </header>
+            <article>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th class="col-md-4">实例</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-default"><i class="font-icon font-icon-star"></i>图标按钮</button>
+                            </td>
+                            <td>
+                                <p>图标按钮</p>
+                                <pre>&lt;button class=&quot;btn-default&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;font-icon font-icon-star&quot;&gt;&lt;/i&gt;带图标的按钮&lt;/button&gt;</pre>
+                                <p>在按钮上使用图标有时能起到点睛之笔的效果</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-link">链接按钮</button>
+                            </td>
+                            <td>
+                                <p>链接按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-link&quot; type=&quot;button&quot;&gt;按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-secondary-outline">线框按钮</button>
+                            </td>
+                            <td>
+                                <p>线框按钮</p>
+                                <pre>示例代码：
+                <code>&lt;button class=&quot;btn btn-secondary-outline&quot; type=&quot;button&quot;&gt;线框按钮&lt;/button&gt;</code>
+              </pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-block">块级按钮</button>
+                                <button type="button" class="btn btn-block">块级按钮</button>
+                            </td>
+                            <td>
+                                <p>块级按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-block&quot; type=&quot;button&quot;&gt;块级按钮&lt;/button&gt;</pre>
+                                <p>块状按钮会占据整个水平宽度，适合较窄面板中的重要操作。</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary active">激活按钮</button>
+                            </td>
+                            <td>
+                                <p>激活按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary active&quot; type=&quot;button&quot;&gt;激活按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn active" disabled>disabled按钮</button>
+                            </td>
+                            <td>
+                                <p>disabled按钮</p>
+                                <pre>&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;btn&nbsp;active&quot;&nbsp;disabled&gt;disabled按钮&lt;/button&gt;</pre>
+                                <p>按钮加上disabled熟悉后，不只是样式的变化，会阻止按钮默认的行为事件，比如禁用按钮的点击，禁用表单提交方面有广泛的用处。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>控件颜色</h3>
+            </header>
+            <article>
+                <p>按钮的颜色赋予按钮以感情色彩能够在视觉上首当其冲的体现按钮的功能意向。例如重要按钮和标准按钮的颜色不同而体现其重要程度。使用更多的颜色来使得目的更加明确，与用户期望一致。</p>
+                <p>从视觉设计上考虑，对于多颜色的按钮使用要慎重，一个页面颜色太多，容易分散用户的注意力。只在必须需要的时候使用多颜色的按钮</p>
+                <table class="table demo-table">
+                    <tbody>
+                        <tr>
+                            <th class="col-md-4">实例</th>
+                            <th>描述</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn">按钮</button>
+                            </td>
+                            <td>
+                                <p>默认按钮</p>
+                                <pre>&lt;button class=&quot;btn&quot; type=&quot;button&quot;&gt;按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary">蓝色按钮</button>
+                            </td>
+                            <td>
+                                <p>蓝色按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot;&gt;蓝色按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-success">绿色按钮</button>
+                            </td>
+                            <td>
+                                <p>绿色按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-success&quot; type=&quot;button&quot;&gt;绿色按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-info">青色按钮</button>
+                            </td>
+                            <td>
+                                <p>青色按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-info&quot; type=&quot;button&quot;&gt;青色按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-warning">黄色按钮</button>
+                            </td>
+                            <td>
+                                <p>黄色按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-warning&quot; type=&quot;button&quot;&gt;黄色按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-danger">红色按钮</button>
+                            </td>
+                            <td>
+                                <p>红色按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-danger&quot; type=&quot;button&quot;&gt;红色按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary-outline">蓝色线框按钮</button>
+                            </td>
+                            <td>
+                                <p>蓝色线框按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-primary-outline&quot; type=&quot;button&quot;&gt;蓝色线框按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-secondary-outline">灰色线框按钮</button>
+                            </td>
+                            <td>
+                                <p>灰色线框按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-secondary-outline&quot; type=&quot;button&quot;&gt;灰色线框按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-success-outline">绿色线框按钮</button>
+                            </td>
+                            <td>
+                                <p>绿色线框按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-success-outline&quot; type=&quot;button&quot;&gt;绿色线框按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-warning-outline">黄色线框按钮</button>
+                            </td>
+                            <td>
+                                <p>黄色线框按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-warning-outline&quot; type=&quot;button&quot;&gt;黄色线框按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-danger-outline">红色线框按钮</button>
+                            </td>
+                            <td>
+                                <p>红色线框按钮</p>
+                                <pre>&lt;button class=&quot;btn btn-danger-outline&quot; type=&quot;button&quot;&gt;红色线框按钮&lt;/button&gt;</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

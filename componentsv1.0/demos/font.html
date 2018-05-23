@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>图标字体</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+    <style type="text/css">
+    .icon-list {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .icon-list li {
+        float: left;
+        width: 90px;
+        margin-right: 20px;
+        text-align: center;
+        list-style: none;
+    }
+    
+    .icon-title {
+        height: 30px;
+        overflow: hidden;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>图标字体</h3>
+            </header>
+            <article>
+                <p>图标能在视觉上简洁有效的指引用户操作。特殊情况下，使用图标能够代替文本。</p>
+                <p></p>何时使用图标？
+                <p>同一个应用程序中的图标应该具有一致的外观及用户行为响应，应该将整个图标集作为用户界面中的重要部分。一般图标用于如下情况：</p>
+                <ul>
+                    <li>用于应用程序头部，便于用户识别正在使用的应用；</li>
+                    <li>用于按钮，对于一些常用的按钮可以使用图标取代按钮中的文本，使得界面更加简洁；</li>
+                    <li>用于提示消息，图标能指明消息类型，便于用户无需仔细阅读消息内容就可以迅速做出决策；</li>
+                    <li>用于一些简单但重要列表，在列表项目前面加上合适的图标能大大增强列表识别程度；</li>
+                    <li>等同与标签，图标能简明表达项目或信息类型。</li>
+                </ul>
+                <p>使用图标字体</p>
+                <p>在图标字体没有普及之前，图标通常是通过图片来展示，如今图标字体是展示图标的更好方式。使用图标字体能使用CSS对图标进行调整，例如定义大小、颜色及特殊效果。本框架使用图标字体作为系统图标集方案。采用开源web图标字体Font Awesome。</p>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>用法</h3>
+            </header>
+            <article>
+                <p>使用一个单独的<code>&lt;span&gt;</code>标签或者<code>&lt;i&gt;</code>并增加对应的CSS类名即可，用来作为图标的标签不需要包含任何文本也不应该如此。</p>
+                <code>&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&quot;&gt;&lt;/i&gt;&nbsp;</code>
+                <br><strong>注意要点</strong>
+                <p>使用图标字体有一个特大好处就是图标就是文本字符，所有能用于文本的样式都可以用于图标，这样就可以随意定义图标的大小、颜色，甚至一些CSS3特效。但应该在同一个应用程序中图标应具有统一的样式，包含如下内容：</p>
+                <ul>
+                    <li>图标应具备统一的颜色，如果有交互行为样式也应该保持一致；</li>
+                    <li>图标的大小应该保持一致，正文中的图标大小应为14px，标题中的图标可以为28px；</li>
+                    <li>图标应与所指示的内容对应，不同地方的同一个指示内容应该使用同一个图标。</li>
+                    <li>不要将在任何控件标签上直接应用图标CSS类名，应该嵌套一个单独的<code>&lt;span&gt;</code>标签或者<code>&lt;i&gt;</code>标签。</li>
+                </ul>
+                <p><code>&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-**&quot;&gt;&lt;/i&gt;&nbsp;</code>其中的**可以复制下文中的图标展示里的名称</p>
+                <p>大小以及图标颜色：</p>
+                <table class="table table-icons-example">
+                    <tbody>
+                        <tr>
+                            <td>正常大小</td>
+                            <td><i class="font-icon font-icon-star"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td><code>.font-icon-2x</code></td>
+                            <td><i class="font-icon font-icon-star font-icon-2x"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&nbsp;font-icon-2x&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td><code>.font-icon-3x</code></td>
+                            <td><i class="font-icon font-icon-star font-icon-3x"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&nbsp;font-icon-3x&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td><code>.font-icon-4x</code></td>
+                            <td><i class="font-icon font-icon-star font-icon-4x"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&nbsp;font-icon-4x&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td><code>.font-icon-5x</code></td>
+                            <td><i class="font-icon font-icon-star font-icon-5x"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&nbsp;font-icon-5x&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                        <tr>
+                            <td>颜色</td>
+                            <td><i class="font-icon font-icon-star font-icon-5x color-orange"></i></td>
+                            <td><pre class="prettyprint prettyprinted">&lt;i&nbsp;class=&quot;font-icon&nbsp;font-icon-star&nbsp;font-icon-5x&nbsp;color-orange&quot;&gt;&lt;/i&gt;</pre></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>基本样式</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <h4>网页</h4>
+                    <ul class="icon-list clearfix" id="icon-list1"></ul>
+                    <h4>手势字体</h4>
+                    <ul class="icon-list clearfix" id="icon-list2"></ul>
+                    <h4>运输</h4>
+                    <ul class="icon-list clearfix" id="icon-list3"></ul>
+                    <h4>性别</h4>
+                    <ul class="icon-list clearfix" id="icon-list4"></ul>
+                    <h4>文件类型</h4>
+                    <ul class="icon-list clearfix" id="icon-list5"></ul>
+                    <h4>表单</h4>
+                    <ul class="icon-list clearfix" id="icon-list6"></ul>
+                    <h4>图表</h4>
+                    <ul class="icon-list clearfix" id="icon-list7"></ul>
+                    <h4>文本编辑</h4>
+                    <ul class="icon-list clearfix" id="icon-list8"></ul>
+                    <h4>指示方向</h4>
+                    <ul class="icon-list clearfix" id="icon-list9"></ul>
+                    <h4>视频播放</h4>
+                    <ul class="icon-list clearfix" id="icon-list10"></ul>
+                </div>
+            </article>
+        </section>
+    </div>
+    <script type="text/javascript" src="font.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $.each(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], function(index, val) {
+            var htmls = '';
+            for (var i = 0; i < fontArr[index]['fArr'].length; i++) {
+                htmls += '<li>' + '    <div class="media-icon">' + '            <div class="icon-box">' + '                <i class="font-icon font-icon-' + fontArr[index]['fArr'][i] + '"></i>' + '            </div>' + '            <h5 class="icon-title">' + fontArr[index]['fArr'][i] + '</h5>' + '        </div>' + '    </li>'
+            };
+            $("#icon-list" + val).append(htmls);
+            //console.log(htmls);
+        });
+
+    })
+    </script>
+</body>
+
+</html>

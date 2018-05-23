@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tab标签页</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            tab标签页形式可以将同级别内容以堆积的方式展示，有效的收缩页面体积，减少滚动条拉动交互。
+        </article>
+        <section>
+            <header>
+                <h3>用法</h3>
+            </header>
+            <article>
+                <p>通过 <code>div.tab-cell > ul.nav + div.tab-content</code> 的结构方式实现。</p>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>一般tab标签页</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-12">
+                            <div class="tab-cell">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签三</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div class="tab-cell"&gt;
+    &lt;ul class="nav nav-tabs" role="tablist"&gt;
+        &lt;li class="active"&gt;&lt;a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell"&gt;标签一&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell"&gt;标签二&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell"&gt;标签三&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="tab-content"&gt;
+        &lt;div role="tabpanel" class="tab1 tab-pane fade in active"&gt;&lt;p&gt;tab1&lt;/p&gt;&lt;/div&gt;
+        &lt;div role="tabpanel" class="tab2 tab-pane fade"&gt;&lt;p&gt;tab2&lt;/p&gt;&lt;/div&gt;
+        &lt;div role="tabpanel" class="tab3 tab-pane fade"&gt;&lt;p&gt;tab3&lt;/p&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带更多的一般tab标签页</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-12">
+                            <div class="tab-cell">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>圆点tab标签页</h3>
+            </header>
+            <article>
+                <p>给<code>.nav</code>添加<code>.nav-pills</code></p>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-12">
+                            <div class="tab-cell">
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>底线tab标签页</h3>
+            </header>
+            <article>
+                <p>给<code>.nav</code>添加<code>.nav-secondary</code></p>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-12">
+                            <div class="tab-cell">
+                                <ul class="nav nav-secondary" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>自适应宽度</h3>
+            </header>
+            <article>
+                <p>给<code>.nav</code>添加<code>.nav-justified</code></p>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-24">
+                            <div class="tab-cell">
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-24">
+                            <div class="tab-cell">
+                                <ul class="nav nav-pills nav-justified" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-24">
+                            <div class="tab-cell">
+                                <ul class="nav nav-secondary nav-justified" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>垂直排列</h3>
+            </header>
+            <article>
+                <p>给<code>.nav</code>添加<code>.nav-stacked</code></p>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-tabs nav-stacked" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-pills nav-stacked" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-secondary nav-stacked" role="tablist">
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带标题</h3>
+            </header>
+            <article>
+                <p>给<code>.nav</code>的第一个<code>li</code>添加<code>.nav-heading</code></p>
+                <div class="example">
+                    <div class="row show-grid">
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-heading">这是标题</li>
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li class="nav-heading">这是标题</li>
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-cell">
+                                <ul class="nav nav-secondary" role="tablist">
+                                    <li class="nav-heading">这是标题</li>
+                                    <li class="active"><a href=".tab1" role="tab" data-toggle="tab" data-parent=".tab-cell">标签一</a></li>
+                                    <li><a href=".tab2" role="tab" data-toggle="tab" data-parent=".tab-cell">标签二</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href=".tab3" role="tab" data-toggle="tab" data-parent=".tab-cell">标签3</a></li>
+                                            <li><a href=".tab4" role="tab" data-toggle="tab" data-parent=".tab-cell">标签4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab1 tab-pane fade in active"><p>tab1</p></div>
+                                    <div role="tabpanel" class="tab2 tab-pane fade"><p>tab2</p></div>
+                                    <div role="tabpanel" class="tab3 tab-pane fade"><p>tab3</p></div>
+                                    <div role="tabpanel" class="tab4 tab-pane fade"><p>tab4</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre></pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

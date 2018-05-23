@@ -1,0 +1,135 @@
+//
+// Alerts
+// --------------------------------------------------
+
+
+// Base styles
+// -------------------------
+
+.alert {
+  padding: $alert-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
+
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: $alert-link-font-weight;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+  &.with-icon {
+      display: table;
+      width: 100%;
+      >[class*=icon-] {
+        width: 48px;
+        text-align: center;
+        &,& + .content{
+          display: table-cell;
+          float: none;
+          min-height: 0;
+          margin: 0;
+          vertical-align: middle;
+        }
+      }
+  }
+  >[class*=icon-] {
+    float: left;
+    margin-top: -5px;
+    font-size: 42px;
+    opacity: .6;
+    -webkit-transition: opacity .2s cubic-bezier(.175,.885,.32,1);
+    transition: opacity .2s cubic-bezier(.175,.885,.32,1);
+  }
+}
+
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+  padding-right: ($alert-padding + 20);
+
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+  }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+.alert {
+  @include alert-variant($alert-default-bg, $alert-default-border, $alert-default-text);
+}
+.alert-primary {
+  @include alert-variant($alert-primary-bg, $alert-primary-border, $alert-primary-text);
+}
+.alert-secondary {
+  @include alert-variant($alert-secondary-bg, $alert-secondary-border, $alert-secondary-text);
+}
+.alert-success {
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+.alert-info {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+.alert-warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+
+.alert-danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+
+//inverse
+.alert-inverse {
+  @include alert-variant($alert-default-inverse-bg, $alert-default-inverse-border, $alert-default-inverse-text);
+}
+.alert-primary-inverse {
+  @include alert-variant($alert-primary-inverse-bg, $alert-primary-inverse-border, $alert-primary-inverse-text);
+}
+.alert-success-inverse {
+  @include alert-variant($alert-success-inverse-bg, $alert-success-inverse-border, $alert-success-inverse-text);
+}
+
+.alert-info-inverse {
+  @include alert-variant($alert-info-inverse-bg, $alert-info-inverse-border, $alert-info-inverse-text);
+}
+
+.alert-warning-inverse {
+  @include alert-variant($alert-warning-inverse-bg, $alert-warning-inverse-border, $alert-warning-inverse-text);
+}
+
+.alert-danger-inverse {
+  @include alert-variant($alert-danger-inverse-bg, $alert-danger-inverse-border, $alert-danger-inverse-text);
+}
+
+
+.alert-block {
+    margin: 0;
+    border-radius: 0;
+}

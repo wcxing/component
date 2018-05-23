@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>标签</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>基本样式</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <span class="label">标签</span>
+                    <span class="label label-primary">Tag</span>
+                </div>
+                <pre>&lt;span&nbsp;class=&quot;label&quot;&gt;标签&lt;/span&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>标签和徽标的颜色</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <span class="label">Default</span>
+                    <span class="label label-primary">Primary</span>
+                    <span class="label label-success">Success</span>
+                    <span class="label label-info">Info</span>
+                    <span class="label label-warning">Warning</span>
+                    <span class="label label-danger">Danger</span>
+                </div>
+                <pre>&lt;span&nbsp;class=&quot;label&quot;&gt;Default&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-danger&quot;&gt;Danger&lt;/span&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>徽标</h3>
+            </header>
+            <article>
+                <p><code>.label-badge</code></p>
+                <div class="example">
+                    <span class="label label-badge">12</span>
+                    <span class="label label-badge label-primary">Primary</span>
+                    <span class="label label-badge label-success">Success</span>
+                    <span class="label label-badge label-info">Info</span>
+                    <span class="label label-badge label-warning">Warning</span>
+                    <span class="label label-badge label-danger">Danger</span>
+                </div>
+                <pre>&lt;span&nbsp;class=&quot;label&nbsp;label-badge&quot;&gt;12&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-badge&nbsp;label-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-badge&nbsp;label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-badge&nbsp;label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-badge&nbsp;label-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-badge&nbsp;label-danger&quot;&gt;Danger&lt;/span&gt;</pre>
+                <h4>小圆点徽标</h4>
+                <div class="example">
+                    <span class="label label-dot">12</span>
+                    <span class="label label-dot label-primary">Primary</span>
+                    <span class="label label-dot label-success">Success</span>
+                    <span class="label label-dot label-info">Info</span>
+                    <span class="label label-dot label-warning">Warning</span>
+                    <span class="label label-dot label-danger">Danger</span>
+                </div>
+                <pre>&lt;span&nbsp;class=&quot;label&nbsp;label-dot&quot;&gt;12&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-danger&quot;&gt;Danger&lt;/span&gt;</pre>
+                <h4>按钮中的徽标</h4>
+                <div class="example">
+                    <button class="btn">我的消息 <span class="label label-badge">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-badge label-primary">12</span></button>
+                    <button class="btn">处理错误
+                        <span class="label label-badge label-success">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-badge label-info">12</span></button>
+                    <button class="btn">处理错误
+                        <span class="label label-badge label-warning">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-badge label-danger">12</span></button>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary">联系人 <span class="label label-badge">12</span></button>
+                    <button class="btn btn-success">联系人
+                        <span class="label label-badge">12</span></button>
+                    <button class="btn btn-info">联系人 <span class="label label-badge">12</span></button>
+                    <button class="btn btn-warning">联系人 <span class="label label-badge">12</span></button>
+                    <button class="btn btn-danger">联系人
+                        <span class="label label-badge">12</span></button>
+                    <br>
+                    <br>
+                    <button class="btn">列表 <span class="label label-dot">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-dot label-primary">12</span></button>
+                    <button class="btn">处理错误
+                        <span class="label label-dot label-success">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-dot label-info">12</span></button>
+                    <button class="btn">处理错误 <span class="label label-dot label-warning">12</span></button>
+                    <button class="btn">处理错误
+                        <span class="label label-dot label-danger">12</span></button>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary">联系人 <span class="label label-dot">12</span></button>
+                    <button class="btn btn-success">联系人
+                        <span class="label label-dot">12</span></button>
+                    <button class="btn btn-info">联系人 <span class="label label-dot">12</span></button>
+                    <button class="btn btn-warning">联系人 <span class="label label-dot">12</span></button>
+                    <button class="btn btn-danger">联系人
+                        <span class="label label-dot">12</span></button>
+                </div>
+                <pre>&lt;button&nbsp;class=&quot;btn&quot;&gt;按钮&nbsp;&lt;span&nbsp;class=&quot;label&nbsp;label-badge&quot;&gt;12&lt;/span&gt;&lt;/button&gt;</pre>
+                <h4>列表组中的徽标和标签</h4>
+                <div class="example">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Project <span class="label label-success">New</span></a>
+                        <a href="#" class="list-group-item">todo</a>
+                        <a href="#" class="list-group-item">story<span class="label label-badge label-primary pull-right">3 stories</span></a>
+                        <a href="#" class="list-group-item">task<span class="label label-info label-badge pull-right">10 tasks</span></a>
+                        <a href="#" class="list-group-item">bug <span class="label label-badge label-warning pull-right">2 bugs</span></a>
+                        <a href="#" class="list-group-item">case <span class="label label-badge label-danger pull-right">100+</span></a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;Project&nbsp;&lt;span&nbsp;class=&quot;label label-badge label-danger pull-right&quot;&gt;New&lt;/span&gt;&lt;/a&gt;
+&nbsp;&nbsp;...</pre>
+                <h4>序号</h4>
+                <div class="example">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item"><span class="label label-danger mgr-sm">1</span>Project </a>
+                        <a href="#" class="list-group-item"><span class="label label-warning mgr-sm">2</span>todo</a>
+                        <a href="#" class="list-group-item"><span class="label label-primary mgr-sm">3</span>story</a>
+                        <a href="#" class="list-group-item"><span class="label label-info mgr-sm">4</span>task</a>
+                        <a href="#" class="list-group-item"><span class="label label-success mgr-sm">5</span>bug </a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;&lt;span&nbsp;class=&quot;label label-danger&quot;&gt;1&lt;/span&gt;&nbsp;Project&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;...</pre>
+                <h4>装饰列表</h4>
+                <div class="example">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item"><span class="label label-dot label-danger mgr-sm">1</span>Project </a>
+                        <a href="#" class="list-group-item"><span class="label label-dot label-warning mgr-sm">2</span>todo</a>
+                        <a href="#" class="list-group-item"><span class="label label-dot label-primary mgr-sm">3</span>story</a>
+                        <a href="#" class="list-group-item"><span class="label label-dot label-info mgr-sm">4</span>task</a>
+                        <a href="#" class="list-group-item"><span class="label label-dot label-success mgr-sm">5</span>bug </a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;&lt;span&nbsp;class=&quot;label label-dot label-danger&quot;&gt;1&lt;/span&gt;&nbsp;Project&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;...</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

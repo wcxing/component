@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>panel</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>有标题、内容、脚注，把相关的信息组合归纳成一个独立的区块，这就是面板。区块可以有副信息或者操作，比如常见的“更多”，面板折叠等，这些副信息可以放到panel-tool内。使用面板需要注意严格的结构和样式名称。虽然面板标题<code>.panel-title</code>是可选的，但是如果有标题，强烈建议放到panel-title标签内。</article>
+        <section>
+            <header>
+                <h3>基本类型</h3>
+            </header>
+            <article>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel">
+                        <div class="panel-body">面板.panel-body</div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">面板-带标题</h4>
+                            </div>
+                            <div class="panel-body">面板内容</div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-tool"><a href="#">更多</a></div>
+                                <h4 class="panel-title">面板+标题+工具栏</h4>
+                            </div>
+                            <div class="panel-body">面板内容</div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel">
+                            <div class="panel-body">面板内容</div>
+                            <div class="panel-footer">面板脚注</div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">.panel-primary</div>
+                            <div class="panel-body">面板内容</div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel">
+                            <div class="panel-heading">Panel heading</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>表头</th>
+                                        <th>表头!</th>
+                                        <th>表头.</th>
+                                        <th>表头?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lorem ipsum.</td>
+                                        <td>Officiis, non.</td>
+                                        <td>Molestias, qui.</td>
+                                        <td>Odit, ducimus.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="panel">
+                            <div class="panel-heading">项目</div>
+                            <ul class="list-group">
+                                <li class="list-group-item">待办</li>
+                                <li class="list-group-item">需求</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-body">默认的.panel所做的只是提供基本的边界和内部，来包含内容。</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带标题的面板</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">面板标题</h4>
+                        </div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;面板标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;面板内容&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带工具栏的面板</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-tool"><a href="#">更多</a></div>
+                            <h4 class="panel-title">面板标题</h4>
+                        </div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-tool&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;panel-title&quot;&gt;面板标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;面板内容&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带脚注的面板</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-body">面板内容</div>
+                        <div class="panel-footer">面板脚注</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-footer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section class="">
+            <header>
+                <h3>使用不同色彩主题</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">.panel-primary</div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">.panel-success</div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">.panel-warning</div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">.panel-danger</div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">.panel-info</div>
+                        <div class="panel-body">面板内容</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&nbsp;panel-primary&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;panel&nbsp;panel-success&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;panel&nbsp;panel-warning&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;panel&nbsp;panel-danger&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;
+&lt;div&nbsp;class=&quot;panel&nbsp;panel-info&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>包含表格</h3>
+            </header>
+            <article>
+                <p>面板内直接放置table，不需要使用<code>.panel-body</code>标签，否则会导致多余的内补白和边框</p>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-heading">Panel heading</div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Lorem ipsum.</th>
+                                    <th>Repudiandae, harum!</th>
+                                    <th>Tenetur, corporis.</th>
+                                    <th>Perspiciatis, porro?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lorem ipsum.</td>
+                                    <td>Officiis, non.</td>
+                                    <td>Molestias, qui.</td>
+                                    <td>Odit, ducimus.</td>
+                                </tr>
+                                <tr>
+                                    <td>Lorem ipsum.</td>
+                                    <td>Repellendus, exercitationem!</td>
+                                    <td>Velit, eos.</td>
+                                    <td>Eius, officiis.</td>
+                                </tr>
+                                <tr>
+                                    <td>Lorem ipsum.</td>
+                                    <td>Amet, esse!</td>
+                                    <td>Quis, pariatur!</td>
+                                    <td>Totam, quae.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;table&nbsp;class=&quot;table&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/table&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>包含列表</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel">
+                        <div class="panel-heading">项目</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">待办</li>
+                            <li class="list-group-item">需求</li>
+                            <li class="list-group-item">任务</li>
+                            <li class="list-group-item">Bug</li>
+                            <li class="list-group-item">用例</li>
+                        </ul>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>面板组</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="panel-group">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">面板标题</h4>
+                            </div>
+                            <div class="panel-body">面板内容</div>
+                            <div class="panel-footer">面板脚注</div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">面板标题</h4>
+                            </div>
+                            <div class="panel-body">面板内容</div>
+                            <div class="panel-footer">面板脚注</div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">面板标题</h4>
+                            </div>
+                            <div class="panel-body">面板内容</div>
+                            <div class="panel-footer">面板脚注</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;panel-group&quot;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;...
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

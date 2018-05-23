@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interface 4.0组件库</title>
+    <link href="./componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <link href="./componentsv1.0/assets/css/font-awesome.css" rel="stylesheet">
+    <style>
+    .doc-box {
+        position: absolute;
+        left: 0;
+        top: 52px;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+    }
+    
+    .doc-iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Interface 4.0</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="js_nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="font-icon font-icon-book"></i> 基础 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="help/basic/about.html" target="doc_frame">约定</a></li>
+                            <li><a href="help/basic/file.html" target="doc_frame">文件目录结构</a></li>
+                            <li><a href="help/basic/browser.html" target="doc_frame">浏览器可用性</a></li>
+                            <li><a href="help/basic/hello.html" target="doc_frame">页面说明</a></li>
+                            <li><a href="help/basic/responsive.html" target="doc_frame">响应式布局 </a></li>
+                            <li><a href="./componentsv1.0/demos/layout.html" target="doc_frame">页面布局 </a></li>
+                            <li><a href="help/basic/grid.html" target="doc_frame">栅格系统</a></li>
+                            <li><a href="help/basic/typography.html" target="doc_frame">排版</a></li>
+                            <li><a href="help/basic/utilities.html" target="doc_frame">辅助类</a></li>
+                            <li><a href="help/basic/colorset.html" target="doc_frame">配色</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="font-icon font-icon-sitemap"></i> 控件 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/font.html">图标</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/button.html">按钮</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/progressbar.html">进度条</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/label.html">标签</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/textbox.html">文本框</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/breadcrumb.html">面包屑</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/image.html">图片</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/header.html">多级标题</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/divider.html">分隔线</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="font-icon font-icon-columns"></i> 组件 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/alert.html">消息框</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/inputgroup.html"> 输入组</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/listgroup.html">列表组</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/nav.html">导航</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/navbar.html">导航条</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/pagination.html">分页条</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/panel.html">面板</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/tab.html">Tab选项卡</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/table.html">表格</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/button-group.html">按钮组</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="font-icon font-icon-magic"></i> JS插件 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/core-js.html">interface.js</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/dropdown.html">下拉菜单</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/tabs.html">标签页</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/tooltip.html">提示消息</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/collapse.html">折叠</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/swiper.html">轮播</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/datetimepicker.html">日期选择</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/raty.html">星星评分</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/chosen.html">Chosen</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/editor.html">富文本编辑器</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/artdilaog.html">模态对话框</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/paginator.html">动态分页条</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="font-icon font-icon-list-alt"></i> 视图 <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/ztree.html">树形菜单</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/chart.html">图表</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/validator.html">表单验证</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/jqgrid.html">数据表格(jqGrid)</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/datatable.html">数据表格</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/orderlists.html">订单列表</a></li>
+                            <!-- <li><a target="doc_frame" href="./componentsv1.0/demos/calendar.html">日历</a></li> -->
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/view-forms.html">表单</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/article.html">文章</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/card.html">卡片</a></li>
+                            <li><a target="doc_frame" href="./componentsv1.0/demos/comment.html">评论</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li><a title="立即下载-项目包" href="Interface-v4.0.0.zip" target="_blank"><i class="font-icon font-icon-download font-big"></i> 项目包</a></li>
+                    <li><a title="立即下载-源码包" href="Interface-v4.0.0-src.zip" target="_blank"><i class="font-icon font-icon-download font-big"></i> 源码包</a></li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+    <div class="doc-box">
+        <iframe class="doc-iframe" name="doc_frame" id="doc_frame" src="help/basic/about.html" frameborder="0"></iframe>
+    </div>
+    <script src="./componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="./componentsv1.0/assets/js/interface.min.js"></script>
+    <script>
+    $('#js_nav').on('click', 'li', function(event) {
+        var _this = $(this);
+        var _p = _this.parents('.dropdown');
+        var _child = _this.children('a[target="doc_frame"]');
+
+        _this.addClass('active').siblings('li').removeClass('active');
+        _p.addClass('active').siblings('li').removeClass('active').find('.active').removeClass('active');
+
+        if (_child.length) {
+            $('title').text(_p.children('a').text() + ' - ' + _child.text());
+        }
+    });
+    </script>
+</body>
+
+</html>

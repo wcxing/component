@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>列表组</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body onload="afterPageLoad()">
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>基本类型</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="#">用ul &gt; li实现，点击区域只有文字</a>
+                        </li>
+                        <li class="list-group-item"><a href="#">待办</a></li>
+                        <li class="list-group-item"><a href="#">需求</a></li>
+                        <li class="list-group-item"><a href="#">任务</a></li>
+                        <li class="list-group-item"><a href="#">Bug</a></li>
+                        <li class="list-group-item">用例</li>
+                    </ul>
+                </div>
+                <pre>&lt;ul&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;项目&lt;/a&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;待办&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;需求&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;任务&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;&lt;a&nbsp;href=&quot;#&quot;&gt;Bug&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&nbsp;class=&quot;list-group-item&quot;&gt;用例&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>链接</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">用div &gt; a实现，实现整行点击</a>
+                        <a href="#" class="list-group-item">待办</a>
+                        <a href="#" class="list-group-item">需求</a>
+                        <a href="#" class="list-group-item active">任务</a>
+                        <a href="#" class="list-group-item">Bug</a>
+                        <a href="#" class="list-group-item">用例</a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;用div&nbsp;&gt;项目&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;待办&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;需求&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&nbsp;active&quot;&gt;任务&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;Bug&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;用例&lt;/a&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>定制列表内容</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">项目</h4>
+                            <p class="list-group-item-text text-muted">共12个新条目</p>
+                        </a>
+                        <a href="#" class="list-group-item active">
+                            <h4 class="list-group-item-heading">Bug</h4>
+                            <p class="list-group-item-text text-muted">没有未处理的bug</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">任务</h4>
+                            <p class="list-group-item-text text-muted"># 处理bug</p>
+                        </a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&quot;&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;list-group-item-heading&quot;&gt;项目&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&quot;&gt;共12个新条目&lt;/p&gt;
+&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;list-group-item-heading&quot;&gt;Bug&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&quot;&gt;没有未处理的bug&lt;/p&gt;
+&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;list-group-item-heading&quot;&gt;任务&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&quot;&gt;#&nbsp;处理bug&lt;/p&gt;
+&nbsp;&nbsp;&lt;/a&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+       
+        <section>
+            <header>
+                <h3>无边框内容</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="list-group list-group-horizontal list-group-borderless">
+                        <a href="#" class="list-group-item">
+                            <h5 class="list-group-item-heading"><span class="label label-dot label-warning mgr-sm">1</span>关于亦庄机房7层服务器停机公告</h5>
+                            <p class="list-group-item-text text-muted pull-right">2015-8-20</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h5 class="list-group-item-heading"><span class="label label-dot label-warning mgr-sm">2</span>关于亦庄机房7层服务器停机公告</h5>
+                            <p class="list-group-item-text text-muted pull-right">2015-8-20</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h5 class="list-group-item-heading"><span class="label label-dot label-warning mgr-sm">3</span>关于亦庄机房7层服务器停机公告</h5>
+                            <p class="list-group-item-text text-muted pull-right">2015-8-20</p>
+                        </a>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;list-group&nbsp;list-group-horizontal&nbsp;list-group-borderless&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5&nbsp;class=&quot;list-group-item-heading&quot;&gt;&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-warning&nbsp;mgr-sm&quot;&gt;1&lt;/span&gt;关于亦庄机房7层服务器停机公告&lt;/h5&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&nbsp;pull-right&quot;&gt;2015-8-20&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5&nbsp;class=&quot;list-group-item-heading&quot;&gt;&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-warning&nbsp;mgr-sm&quot;&gt;2&lt;/span&gt;关于亦庄机房7层服务器停机公告&lt;/h5&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&nbsp;pull-right&quot;&gt;2015-8-20&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&nbsp;class=&quot;list-group-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5&nbsp;class=&quot;list-group-item-heading&quot;&gt;&lt;span&nbsp;class=&quot;label&nbsp;label-dot&nbsp;label-warning&nbsp;mgr-sm&quot;&gt;3&lt;/span&gt;关于亦庄机房7层服务器停机公告&lt;/h5&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&nbsp;class=&quot;list-group-item-text&nbsp;text-muted&nbsp;pull-right&quot;&gt;2015-8-20&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <script>
+        function afterPageLoad() {
+            $('#pageContent').on('click', '.list-group > a.list-group-item', function() {
+                var $item = $(this);
+                $item.parent().children('.active').removeClass('active');
+                $item.addClass('active');
+            });
+        }
+        </script>
+    </div>
+</body>
+
+</html>

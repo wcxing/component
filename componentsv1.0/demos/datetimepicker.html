@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>日期选择使用国产插件，可以自定义时间选择范围，使用比较灵活。</p>
+            <p>详细的参数使用，可以参考<a target="_blank" href="http://www.my97.net/dp/demo/index.htm">My97 Datepicker</a></p>
+        </article>
+        <section>
+            <header>
+                <h3>默认</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-md-8 form-group">
+                            <label class="col-md-8 control-label text-right">默认时间</label>
+                            <div class="col-md-16">
+                                <input type="text" class="form-control date-picker" onclick="WdatePicker()">
+                            </div>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <label class="col-md-8 control-label text-right">带时分秒</label>
+                            <div class="col-md-16">
+                                <input type="text" class="form-control date-picker" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日 HH时mm分ss秒'})">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>限制起止时间</h3>
+            </header>
+            <article>
+                <p><strong>前面的日期不能大于后面的日期且两个日期都不能大于 2020-10-01</strong></p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="col-md-6 control-label text-right">有效期</label>
+                            <div class="col-md-8">
+                                <input id="mindate" type="text" class="form-control date-picker" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'maxdate\')||\'2020-10-01\'}'})">
+                            </div>
+                            <div class="col-md-2 text-center">--</div>
+                            <div class="col-md-8">
+                                <input id="maxdate" type="text" class="form-control date-picker" onclick="WdatePicker({minDate:'#F{$dp.$D(\'mindate\')}',maxDate:'2020-10-01'})">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <pre>&lt;input&nbsp;id=&quot;mindate&quot;&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&nbsp;date-picker&quot;&nbsp;onclick=&quot;WdatePicker({maxDate:'#F{$dp.$D(\'maxdate\')||\'2020-10-01\'}'})&quot;&gt;
+--
+&lt;input&nbsp;id=&quot;maxdate&quot;&nbsp;type=&quot;text&quot;&nbsp;class=&quot;form-control&nbsp;date-picker&quot;&nbsp;onclick=&quot;WdatePicker({minDate:'#F{$dp.$D(\'mindate\')}',maxDate:'2020-10-01'})&quot;&gt;
+                        <br>
+注意:
+两个日期的日期格式必须相同
+$dp.$&nbsp;相当于&nbsp;document.getElementById&nbsp;函数。那么为什么里面的&nbsp;'&nbsp;使用&nbsp;\'&nbsp;呢?&nbsp;那是因为&nbsp;&quot;&nbsp;和&nbsp;'&nbsp;都被外围的函数使用了,故使用转义符&nbsp;\&nbsp;,否则会提示JS语法错误。所以您在其他地方使用时注意把&nbsp;\'&nbsp;改成&nbsp;&quot;&nbsp;或者&nbsp;'&nbsp;来使用。
+#F{$dp.$D(\'maxdate\')||\'2020-10-01\'}&nbsp;表示当&nbsp;maxdate&nbsp;为空时,&nbsp;采用&nbsp;2020-10-01&nbsp;的值作为最大值
+                    </pre>
+                <p class="mgt-lg"><strong>前面的日期+3天 不能大于 后面的日期</strong></p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="col-md-6 control-label text-right">有效期</label>
+                            <div class="col-md-8">
+                                <input id="mindate2" type="text" class="form-control date-picker" onclick="WdatePicker({maxDate:'#F{$dp.$D(\'maxdate2\',{d:-3});}'})">
+                            </div>
+                            <div class="col-md-2 text-center">--</div>
+                            <div class="col-md-8">
+                                <input id="maxdate2" type="text" class="form-control date-picker" onclick="WdatePicker({minDate:'#F{$dp.$D(\'mindate2\',{d:3});}'})">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre>
+&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;Wdate&quot;&nbsp;id=&quot;d4321&quot;&nbsp;onFocus=&quot;WdatePicker({maxDate:'#F{$dp.$D(\'d4322\',{d:-3});}'})&quot;/&gt;
+&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;Wdate&quot;&nbsp;id=&quot;d4322&quot;&nbsp;onFocus=&quot;WdatePicker({minDate:'#F{$dp.$D(\'d4321\',{d:3});}'})&quot;/&gt;
+<br>
+使用 $dp.$D 函数 可以将日期框中的值,加上定义的日期差量:
+两个参数: id={字符类型}需要处理的文本框的id值 , obj={对象类型}日期差量
+日期差量用法:
+属性y,M,d,H,m,s分别代表年月日时分秒
+如 
+为空时,表示直接取值,不做差量(示例4-3-1中的参数就是空的)
+{M:5,d:7} 表示 五个月零7天
+{y:1,d:-3} 表示 1年少3天
+{d:1,H:1} 表示一天多1小时</pre>
+            </article>
+        </section>
+    </div>
+
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    
+    <script src="../assets/js/interface.min.js"></script>
+    <script src="../assets/plugins/My97DatePicker/WdatePicker.js"></script>
+    <script>
+    $(function() {})
+    </script>
+</body>
+
+</html>

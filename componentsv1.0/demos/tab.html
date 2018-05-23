@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tab选项卡</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>tab选项卡形式可以将同级别内容以堆积的方式展示，有效的收缩页面体积，减少滚动条拉动交互。</article>
+        <section>
+            <header>
+                <h3>基本类型</h3>
+            </header>
+            <article>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tab">
+                            <div class="tab-heading">
+                                <h4 class="tab-title">tab标题</h4>
+                                <div class="tab-tool">
+                                    <a href="#">更多</a>
+                                </div>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab tab-line">
+                            <div class="tab-heading">
+                                <h4 class="tab-title">tab标题</h4>
+                                <div class="tab-tool">
+                                    <a href="#">更多</a>
+                                </div>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab tab-pills">
+                            <div class="tab-heading">
+                                <h4 class="tab-title">tab标题</h4>
+                                <div class="tab-tool">
+                                    <a href="#">更多</a>
+                                </div>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tab tab-condensed">
+                            <div class="tab-heading">
+                                <h4 class="tab-title">tab标题</h4>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                                <div class="tab-pane">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab tab-borderless">
+                            <div class="tab-heading">
+                                <h4 class="tab-title">tab标题</h4>
+                                <div class="tab-tool">
+                                    <a href="#">更多</a>
+                                </div>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab tab-borderless tab-condensed">
+                            <div class="tab-heading">
+                                <div class="nav-tab nav-tab-justified">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item3</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                                <div class="tab-pane">3</div>
+                                <div class="tab-pane">4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-24">
+                        <div class="tab tab-stacked">
+                            <div class="tab-heading">
+                                <div class="tab-title">标题</div>
+                                <div class="nav-tab">
+                                    <ul class="tab-list">
+                                        <li class="tab-item active">
+                                            <a href="#">item1</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item2</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item3</a>
+                                        </li>
+                                        <li class="tab-item">
+                                            <a href="#">item4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-body">
+                                <div class="tab-pane active">1</div>
+                                <div class="tab-pane">2</div>
+                                <div class="tab-pane">3</div>
+                                <div class="tab-pane">4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="example">
+                    <div class="tab">
+                        <div class="tab-heading">
+                            <h4 class="tab-title">tab标题</h4>
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>形式二</h3>
+            </header>
+            <article>
+                <p>给<code>.tab</code>应用添加<code>.tab-line</code></p>
+                <div class="example">
+                    <div class="tab tab-line">
+                        <div class="tab-heading">
+                            <h4 class="tab-title">tab标题</h4>
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-line&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>胶囊式</h3>
+            </header>
+            <article>
+                <p>给<code>.tab</code>应用添加<code>.tab-pills</code></p>
+                <div class="example">
+                    <div class="tab tab-pills">
+                        <div class="tab-heading">
+                            <h4 class="tab-title">tab标题</h4>
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-pills&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>紧凑型</h3>
+            </header>
+            <article>
+                <p>给<code>.tab</code>应用添加<code>.tab-condensed</code></p>
+                <div class="example">
+                    <div class="tab tab-condensed">
+                        <div class="tab-heading">
+                            <h4 class="tab-title">tab标题</h4>
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item3</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                            <div class="tab-pane">3</div>
+                            <div class="tab-pane">4</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-condensed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>无边框</h3>
+            </header>
+            <article>
+                <p>给<code>.tab</code>应用添加<code>.tab-borderless</code></p>
+                <div class="example">
+                    <div class="tab tab-borderless">
+                        <div class="tab-heading">
+                            <h4 class="tab-title">tab标题</h4>
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-borderless&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>无边框+紧凑</h3>
+            </header>
+            <article>
+                <p>给<code>.tab</code>应用添加<code>.tab-borderless .tab-condensed</code></p>
+                <div class="example">
+                    <div class="tab tab-borderless tab-condensed">
+                        <div class="tab-heading">
+                            <div class="tab-tool">
+                                <a href="#">更多</a>
+                            </div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item3</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                            <div class="tab-pane">3</div>
+                            <div class="tab-pane">4</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-borderless tab-condensed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>两端对齐</h3>
+            </header>
+            <article>
+                <p>给<code>.nav-tab</code> 添加<code>nav-tab-justified</code></p>
+                <div class="example">
+                    <div class="tab tab-borderless tab-condensed">
+                        <div class="tab-heading">
+                            <div class="nav-tab nav-tab-justified">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item3</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                            <div class="tab-pane">3</div>
+                            <div class="tab-pane">4</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-borderless tab-condensed&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab nav-tab-justified&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>竖向</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="tab tab-stacked">
+                        <div class="tab-heading">
+                            <div class="tab-title">标题</div>
+                            <div class="nav-tab">
+                                <ul class="tab-list">
+                                    <li class="tab-item active">
+                                        <a href="#">item1</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item2</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item3</a>
+                                    </li>
+                                    <li class="tab-item">
+                                        <a href="#">item4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-pane active">1</div>
+                            <div class="tab-pane">2</div>
+                            <div class="tab-pane">3</div>
+                            <div class="tab-pane">4</div>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;tab tab-stacked&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-heading&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&nbsp;class=&quot;tab-title&quot;&gt;tab标题&lt;/h4&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-tool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;更多&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;nav-tab&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;tab-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&nbsp;active&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item1&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;tab-item&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;#&quot;&gt;item2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-body&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&nbsp;active&quot;&gt;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;tab-pane&quot;&gt;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

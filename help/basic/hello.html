@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>button</title>
+    <!-- Bootstrap -->
+    <link href="../../componentsv1.0/assets/css/doc.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <script src="../../componentsv1.0/assets/js/prettify/run_prettify.js"></script>
+    <script src="../../componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../../componentsv1.0/assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <section>
+            <header>
+                <h3>页面结构说明</h3>
+            </header>
+            <article>
+                <pre>
+&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&nbsp;lang=&quot;zh-cn&quot;&gt;
+&nbsp;&nbsp;&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;charset=&quot;utf-8&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;http-equiv=&quot;X-UA-Compatible&quot;&nbsp;content=&quot;IE=edge&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta&nbsp;name=&quot;viewport&quot;&nbsp;content=&quot;width=device-width,&nbsp;initial-scale=1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Hello&nbsp;world!&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;框架样式&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;href=&quot;css/interface.css&quot;&nbsp;rel=&quot;stylesheet&quot;&gt;
+&nbsp;&nbsp;&lt;/head&gt;
+&nbsp;&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello,&nbsp;world!&lt;/h1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;在此处挥洒你的创意&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;jQuery&nbsp;(框架中的的Javascript组件依赖于jQuery)&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;框架&nbsp;Javascript组件&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;js/interface.min.js&quot;&gt;&lt;/script&gt;
+&nbsp;&nbsp;&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>页面说明</h3>
+            </header>
+            <article>
+                <p>
+                    <code>&lt;!DOCTYPE html&gt;</code>是用来声明文档的，页面必须要有此声明，并且位于页面顶部，无此声明或者声明多次会导致在部分浏览器中存在难以解决和定位的兼容bug.
+                </p>
+                <p><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code>禁用IE 的兼容模式，部分浏览器中默认会以ie兼容模式渲染页面，从而产生意外的bug。因此需要禁用</p>
+                <p><code>&lt;meta&nbsp;name=&quot;viewport&quot;&nbsp;content=&quot;width=device-width,&nbsp;initial-scale=1&quot;&gt;</code>响应式代码判断的依据，如果无此设置，在手机浏览器上会将整个页面缩小，放大后需要用手指上下左右方向滑屏才能看到局部。设置后，响应式代码才会正常工作</p>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

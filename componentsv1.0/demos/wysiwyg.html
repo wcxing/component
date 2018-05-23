@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>富文本编辑器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+    <style type="text/css">
+    #editor {
+        overflow: auto;
+        max-height: 300px;
+        min-height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="pdl-huge pdr-huge pdt-big">
+        <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+            <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="font-icon font-icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a data-edit="fontSize 5" class="fs-Five">Huge</a></li>
+                    <li><a data-edit="fontSize 3" class="fs-Three">Normal</a></li>
+                    <li><a data-edit="fontSize 1" class="fs-One">Small</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Text Highlight Color"><i class="font-icon font-icon-paint-brush"></i>&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <p>&nbsp;&nbsp;&nbsp;Text Highlight Color:</p>
+                    <li><a data-edit="backColor #00FFFF">Blue</a></li>
+                    <li><a data-edit="backColor #00FF00">Green</a></li>
+                    <li><a data-edit="backColor #FF7F00">Orange</a></li>
+                    <li><a data-edit="backColor #FF0000">Red</a></li>
+                    <li><a data-edit="backColor #FFFF00">Yellow</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Color"><i class="font-icon font-icon-font"></i>&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <p>&nbsp;&nbsp;&nbsp;Font Color:</p>
+                    <li><a data-edit="foreColor #000000">Black</a></li>
+                    <li><a data-edit="foreColor #0000FF">Blue</a></li>
+                    <li><a data-edit="foreColor #30AD23">Green</a></li>
+                    <li><a data-edit="foreColor #FF7F00">Orange</a></li>
+                    <li><a data-edit="foreColor #FF0000">Red</a></li>
+                    <li><a data-edit="foreColor #FFFF00">Yellow</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="font-icon font-icon-bold"></i></a>
+                <a class="btn btn-default" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="font-icon font-icon-italic"></i></a>
+                <a class="btn btn-default" data-edit="strikethrough" title="Strikethrough"><i class="font-icon font-icon-strikethrough"></i></a>
+                <a class="btn btn-default" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="font-icon font-icon-underline"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" data-edit="insertunorderedlist" title="Bullet list"><i class="font-icon font-icon-list-ul"></i></a>
+                <a class="btn btn-default" data-edit="insertorderedlist" title="Number list"><i class="font-icon font-icon-list-ol"></i></a>
+                <a class="btn btn-default" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="font-icon font-icon-outdent"></i></a>
+                <a class="btn btn-default" data-edit="indent" title="Indent (Tab)"><i class="font-icon font-icon-indent"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="font-icon font-icon-align-left"></i></a>
+                <a class="btn btn-default" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="font-icon font-icon-align-center"></i></a>
+                <a class="btn btn-default" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="font-icon font-icon-align-right"></i></a>
+                <a class="btn btn-default" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="font-icon font-icon-align-justify"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="font-icon font-icon-link"></i></a>
+                <div class="dropdown-menu input-append">
+                    <input placeholder="URL" type="text" data-edit="createLink" />
+                    <button class="btn" type="button">Add</button>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="font-icon font-icon-unlink"></i></a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-default" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="font-icon font-icon-undo"></i></a>
+                <a class="btn btn-default" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="font-icon font-icon-repeat"></i></a>
+                <a class="btn btn-default" data-edit="html" title="Clear Formatting"><i class='font-icon font-icon-pencil'></i></a>
+            </div>
+        </div>
+        <div id="editor" class="lead" data-placeholder="This is a basic example with a simple toolbar."></div>
+    </div>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.min.js"></script>
+    <script src="../assets/js/umd/jquery.hotkeys.js"></script>
+    <script src="../assets/js/umd/bootstrap-wysiwyg.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        //编辑器https://github.com/steveathon/bootstrap-wysiwyg
+        $('#editor').wysiwyg();
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>富文本编辑器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/plugins/editor/wangEditor.min.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>wangEditor——轻量级web富文本编辑器，配置方便，使用简单。支持IE8+浏览器。</p>
+            <p>详细文档请移步：<a target="_blank" href="https://github.com/wangfupeng1988/wangEditor">github: wangEditor</a></p>
+        </article>
+        <section>
+            <header>
+                <h3>简单调用</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <textarea class="form-control" name="editor" id="editor" rows="10">&lt;p&gt;请输入内容..&lt;/p&gt;
+                    </textarea>
+                </div>
+                <pre>
+&lt;textarea class="form-control" name="editor" id="editor" rows="10"&gt;
+    &lt;p&gt;请输入内容..&lt;/p&gt;
+&lt;/textarea&gt;
+                </pre>
+                <pre>
+var editor = new wangEditor('editor');
+editor.create();
+                </pre>
+            </article>
+        </section>
+    </div>
+</body>
+<script src="../assets/js/jquery-1.11.3.min.js"></script>
+<script src="../assets/js/interface.min.js"></script>
+<script src="../assets/plugins/editor/wangEditor.min.js"></script>
+<script>
+var editor = new wangEditor('editor');
+editor.create();
+</script>
+
+</html>

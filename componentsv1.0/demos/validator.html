@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>nice-validator 是一款小巧、简单，同时功能强大的验证插件！</p>
+            <p>详细文档请移步：<a target="_blank" href="http://validator.niceue.com/docs/">nice-validator</a></p>
+        </article>
+        <section>
+            <header>
+                <h3>直接在DOM中绑定规则</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <form class="form-horizontal pd-md" id="form_a">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="username">用户名</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="username" name="username" data-rule="required;username;" data-rule-username="[/[\w\d]{4,12}/, '请输入4-12位字符']" data-tip="请输入4-12位英文字符或数字">
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="username"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="password">密码</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="password" id="password" name="password" data-rule="required; length(6~12)" data-tip="6-12位字符">
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="password"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="pwdAgain">重复密码</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="password" id="pwdAgain" name="pwdAgain" data-rule="required;match(password)" data-msg-match="两次密码不一致耶！">
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="pwdAgain"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="gender">性别</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="gender" name="gender" data-rule="required">
+                                    <option value="">请选择..</option>
+                                    <option value="1">男</option>
+                                    <option value="2">女</option>
+                                    <option value="3">神</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="gender"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="email">邮箱</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" type="text" id="email" name="email" data-rule="required;email">
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="email"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="interest">爱好</label>
+                            <div class="col-sm-7">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="interest" name="interest" data-rule="checked">写代码</label>
+                                    <label>
+                                        <input type="checkbox" name="interest">电影</label>
+                                    <label>
+                                        <input type="checkbox" name="interest">打游戏</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="interest"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="inputTextarea">备注</label>
+                            <div class="col-sm-7">
+                                <textarea id="inputTextarea" name="inputTextarea" class="form-control" data-rule="required;"></textarea>
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="inputTextarea"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-7">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="agree_arguments" data-rule="checked">同意接受协议</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="msg-box" for="agree_arguments"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-primary-outline" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <pre>
+&lt;form class="form-horizontal pd-md" id="form_a"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="username"&gt;用户名&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;input type="text" class="form-control" id="username" name="username" data-rule="required;username;" data-rule-username="[/[\w\d]{4,12}/, '请输入4-12位字符']" data-tip="必填"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="username"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="pwd"&gt;密码&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;input class="form-control" type="password" id="pwd" name="pwd" data-rule="required; length(6~12)" data-tip="必填，6到12位字符"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="pwd"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="pwdAgain"&gt;重复密码&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;input class="form-control" type="password" id="pwdAgain" name="pwdAgain" data-rule="required; match(pwd)"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="pwdAgain"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="gender"&gt;性别&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;select class="form-control" id="gender" name="gender" data-rule="required"&gt;
+                &lt;option value=""&gt;请选择..&lt;/option&gt;
+                &lt;option value="1"&gt;男&lt;/option&gt;
+                &lt;option value="2"&gt;女&lt;/option&gt;
+                &lt;option value="3"&gt;神&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="gender"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="email"&gt;邮箱&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;input class="form-control" type="text" id="email" name="email" data-rule="required;email"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="email"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="interest"&gt;爱好&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="checkbox"&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox" id="interest" name="interest" data-rule="checked"&gt;写代码&lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox" name="interest"&gt;电影&lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox" name="interest"&gt;打游戏&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="interest"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="col-sm-2 control-label" for="inputTextarea"&gt;备注&lt;/label&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;textarea id="inputTextarea" name="inputTextarea" class="form-control" data-rule="required;"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="inputTextarea"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;div class="col-sm-offset-2 col-sm-7"&gt;
+            &lt;div class="checkbox"&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox" id="agree_arguments" data-rule="checked"&gt;同意接受协议&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-3"&gt;
+            &lt;span class="msg-box" for="agree_arguments"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;div class="col-sm-offset-2 col-sm-10"&gt;
+            &lt;button class="btn" type="submit"&gt;提交&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+                </pre>
+                <pre>
+$('#form_a').validator({
+    valid: function(form) {
+        alert('验证成功');
+        // form.submit();
+    }
+});
+                </pre>
+            </article>
+        </section>
+    </div>
+</body>
+<script src="../assets/js/jquery-1.11.3.min.js"></script>
+<script src="../assets/js/interface.min.js"></script>
+<script src="../assets/plugins/validator/jquery.validator.min.js?local=zh-cn"></script>
+<script>
+$('#form_a').validator({
+    valid: function(form) {
+        alert('验证成功');
+        // form.submit();
+    }
+});
+</script>
+
+</html>

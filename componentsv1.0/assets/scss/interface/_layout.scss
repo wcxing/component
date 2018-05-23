@@ -1,0 +1,24 @@
+.layout-container{
+	// @include make-row;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	
+	>div,
+	>.col-aside,
+	>.col-main{
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	>.col-aside{
+		width: 220px;
+	}
+	>.col-aside + .col-main{
+		padding-left:  $grid-gutter-width;
+	}
+	>.col-main + .col-aside{
+  		padding-left: $grid-gutter-width;
+  		width: 240px;
+	}
+}

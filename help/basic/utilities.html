@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>辅助类</title>
+    <!-- Bootstrap -->
+    <link href="../../componentsv1.0/assets/css/doc.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <script src="../../componentsv1.0/assets/js/prettify/run_prettify.js"></script>
+    <script src="../../componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../../componentsv1.0/assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>框架提供了众多实用的辅助类。任何时候只需要加入对应的CSS类名即可。虽然辅助类使用起来非常方便，但也要避免滥用。使用之前应该了解以下要点。</p>
+            <ul>
+                <li>尽量少用或不用辅助类，如果有对应的控件或组件使用。</li>
+                <li>当相同的场景需要大量使用辅助类时，这时应该考虑是否单独定义一个新的控件或组件。</li>
+            </ul>
+        </article>
+        <section>
+            <header>
+                <h3>字号文本</h3>
+            </header>
+            <article>
+                <p>使用标签<code>&lt;small&gt;</code>或者CSS类名<code>.small</code>来使得文本字号比正常情况小一号。</p>
+                <div class="example">
+                    <small>小字号文本，small text.</small>
+                </div>
+                <pre class="prettyprint prettyprinted">&lt;small&gt;小字号文本，small&nbsp;text.&lt;/small&gt;</pre>
+                <table class="table demo-table">
+                    <tr>
+                        <td><code>正常</code></td>
+                        <td><span>14px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-sm&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>.font-sm</code></td>
+                        <td><span class="font-sm">12px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-sm&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>.font-md</code></td>
+                        <td><span class="font-md">14px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-md&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>.font-big</code></td>
+                        <td><span class="font-big">18px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-big&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>.font-lg</code></td>
+                        <td><span class="font-lg">24px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-lg&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>.font-huge</code></td>
+                        <td><span class="font-huge">37px</span></td>
+                        <td>&lt;span&nbsp;class=&quot;font-huge&quot;&gt;字号&lt;/span&gt;</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>盒模型尺寸</h3>
+            </header>
+            <article>
+                <p><img src="box-size.png" alt=""></p>
+                <p>一个元素完整的尺寸饱和上图上的width、height、padding、border-with、margin。框架预定义了margin和padding的尺寸大小，分别加0、sm、md、big、lg、huge，可以单独的定义某一方向的值，也可以4个方向的同时定义。比如<code>.pd-0</code>为元素的上下左右的内边距都为0，常用来覆盖默认的内边距，也可以单独设置为<code>.pdl-0</code>等</p>
+                <table class="table demo-table">
+                    <tr>
+                        <td><code>0</code></td>
+                        <td><span>0</span></td>
+                        <td>
+                            <code>.pd-0</code>
+                            <code>.pdl-0</code>
+                            <code>.pdt-0</code>
+                            <code>.pdr-0</code>
+                            <code>.pdb-0</code>
+                            <code>.mg-0</code>
+                            <code>.mgl-0</code>
+                            <code>.mgt-0</code>
+                            <code>.mgr-0</code>
+                            <code>.mgb-0</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>sm</code></td>
+                        <td><span>5px</span></td>
+                        <td>
+                            <code>.pd-sm</code>
+                            <code>.pdl-sm</code>
+                            <code>.pdt-sm</code>
+                            <code>.pdr-sm</code>
+                            <code>.pdb-sm</code>
+                            <code>.mg-sm</code>
+                            <code>.mgl-sm</code>
+                            <code>.mgt-sm</code>
+                            <code>.mgr-sm</code>
+                            <code>.mgb-sm</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>md</code></td>
+                        <td><span>10px</span></td>
+                        <td>
+                            <code>.pd-md</code>
+                            <code>.pdl-md</code>
+                            <code>.pdt-md</code>
+                            <code>.pdr-md</code>
+                            <code>.pdb-md</code>
+                            <code>.mg-md</code>
+                            <code>.mgl-md</code>
+                            <code>.mgt-md</code>
+                            <code>.mgr-md</code>
+                            <code>.mgb-md</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>big</code></td>
+                        <td><span>15px</span></td>
+                        <td>
+                            <code>.pd-big</code>
+                            <code>.pdl-big</code>
+                            <code>.pdt-big</code>
+                            <code>.pdr-big</code>
+                            <code>.pdb-big</code>
+                            <code>.mg-big</code>
+                            <code>.mgl-big</code>
+                            <code>.mgt-big</code>
+                            <code>.mgr-big</code>
+                            <code>.mgb-big</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>lg</code></td>
+                        <td><span>25px</span></td>
+                        <td>
+                            <code>.pd-lg</code>
+                            <code>.pdl-lg</code>
+                            <code>.pdt-lg</code>
+                            <code>.pdr-lg</code>
+                            <code>.pdb-lg</code>
+                            <code>.mg-lg</code>
+                            <code>.mgl-lg</code>
+                            <code>.mgt-lg</code>
+                            <code>.mgr-lg</code>
+                            <code>.mgb-lg</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>huge</code></td>
+                        <td><span>50px</span></td>
+                        <td>
+                            <code>.pd-huge</code>
+                            <code>.pdl-huge</code>
+                            <code>.pdt-huge</code>
+                            <code>.pdr-huge</code>
+                            <code>.pdb-huge</code>
+                            <code>.mg-huge</code>
+                            <code>.mgl-huge</code>
+                            <code>.mgt-huge</code>
+                            <code>.mgr-huge</code>
+                            <code>.mgb-huge</code>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>文本颜色</h3>
+            </header>
+            <article>
+                <div class="example" contenteditable="true">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p class="text-primary">Perferendis eveniet ipsa modi nesciunt, vel.</p>
+                    <p class="text-danger">Molestias maxime perspiciatis saepe unde corporis.</p>
+                    <p class="text-success">Culpa eum modi assumenda, velit vitae.</p>
+                    <p class="text-warning">Cumque consequuntur modi fugiat debitis dolorum.</p>
+                    <p class="text-info">Minus nisi consectetur dolorum temporibus architecto.
+                    </p>
+                    <p class="text-important">Tenetur ullam amet illo sint magni!</p>
+                    <p class="text-special">Sapiente voluptates debitis dolor ipsam libero!</p>
+                </div>
+                <pre class="prettyprint prettyprinted">&lt;p&nbsp;class=&quot;text-muted&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-primary&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-danger&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-success&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-warning&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-info&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-important&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;text-special&quot;&gt;...&lt;/p&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>文本背景高亮</h3>
+            </header>
+            <article>
+                <div class="example" contenteditable="true">
+                    <p class="highlight-default">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p class="highlight-primary">Perferendis eveniet ipsa modi nesciunt, vel.</p>
+                    <p class="highlight-danger">Molestias maxime perspiciatis saepe unde corporis.
+                    </p>
+                    <p class="highlight-success">Culpa eum modi assumenda, velit vitae.</p>
+                    <p class="highlight-warning">Cumque consequuntur modi fugiat debitis dolorum.
+                    </p>
+                    <p class="highlight-info">Minus nisi consectetur dolorum temporibus architecto.
+                    </p>
+                    <p class="highlight-important">Tenetur ullam amet illo sint magni!</p>
+                    <p class="highlight-special">Sapiente voluptates debitis dolor ipsam libero!
+                    </p>
+                </div>
+                <pre class="prettyprint prettyprinted"></pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>文本背景色</h3>
+            </header>
+            <article>
+                <div class="example" contenteditable="true">
+                    <p class="bg-default">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p class="bg-primary">Perferendis eveniet ipsa modi nesciunt, vel.</p>
+                    <p class="bg-danger">Molestias maxime perspiciatis saepe unde corporis.</p>
+                    <p class="bg-success">Culpa eum modi assumenda, velit vitae.</p>
+                    <p class="bg-warning">Cumque consequuntur modi fugiat debitis dolorum.</p>
+                    <p class="bg-info">Minus nisi consectetur dolorum temporibus architecto.</p>
+                    <p class="bg-important">Tenetur ullam amet illo sint magni!</p>
+                    <p class="bg-special">Sapiente voluptates debitis dolor ipsam libero!</p>
+                </div>
+                <pre class="prettyprint prettyprinted">&lt;p&nbsp;class=&quot;bg-default&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-primary&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-danger&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-success&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-warning&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-info&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-important&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;bg-special&quot;&gt;...&lt;/p&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>禁用文本换行</h3>
+            </header>
+            <article>
+                <p>
+                    使所有文本在一行显示。超出的部分将会被隐藏。只需要使用<code>.text-nowrap</code>或者<code>.nobr</code>。</p>
+                <pre class="prettyprint prettyprinted">&lt;h2&nbsp;class=&quot;text-nowrap&quot;&gt;...&lt;/h2&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>文本超出省略</h3>
+            </header>
+            <article>
+                <p>使所有文本在一行显示。超出的部分会被截断，并且在文本末尾添加省略号。使用<code>.text-ellipsis</code>。</p>
+                <pre class="prettyprint prettyprinted">&lt;h2&nbsp;class=&quot;text-ellipsis&quot;&gt;...&lt;/h2&gt;</pre>
+                <div class="alert alert-warning">
+                    <p>并不是所有浏览器都支持此选项。</p>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>内容边距</h3>
+            </header>
+            <article>
+                <p>在内容元素内添加内边距，使得元素更易于阅读。使用<code>.with-padding</code>。</p>
+                <p>内容边距和文本背景一起使用的例子。</p>
+                <div class="example" contenteditable="true">
+                    <p class="with-padding bg-default">Lorem ipsum dolor sit amet, consectetur.</p>
+                    <p class="with-padding bg-primary">Perferendis eveniet ipsa modi nesciunt, vel.</p>
+                    <p class="with-padding bg-danger">Molestias maxime perspiciatis saepe unde corporis.</p>
+                    <p class="with-padding bg-success">Culpa eum modi assumenda, velit vitae.</p>
+                    <p class="with-padding bg-warning">Cumque consequuntur modi fugiat debitis dolorum.</p>
+                    <p class="with-padding bg-info">Minus nisi consectetur dolorum temporibus architecto.</p>
+                    <p class="with-padding bg-important">Tenetur ullam amet illo sint magni!</p>
+                    <p class="with-padding bg-special">Sapiente voluptates debitis dolor ipsam libero!</p>
+                </div>
+                <pre class="prettyprint prettyprinted">&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-default&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-primary&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-danger&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-success&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-warning&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-info&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-important&quot;&gt;...&lt;/p&gt;
+&lt;p&nbsp;class=&quot;with-padding&nbsp;bg-special&quot;&gt;...&lt;/p&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>关闭按钮</h3>
+            </header>
+            <article>
+                <p>通常用来关闭消息框或者模态框。</p>
+                <div class="example">
+                    <button type="button" class="close" style="float:none"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <pre class="prettyprint prettyprinted">&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&gt;&lt;span&nbsp;aria-hidden=&quot;true&quot;&gt;×&lt;/span&gt;&lt;span&nbsp;class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;&lt;/button&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>三角符号</h3>
+            </header>
+            <article>
+                <div class="example"><span class="caret"></span></div>
+                <pre class="prettyprint prettyprinted">&lt;span&nbsp;class=&quot;caret&quot;&gt;&lt;/span&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>浮动</h3>
+            </header>
+            <article>
+                <p>强制使得一个元素向左或者向右浮动。</p>
+                <pre class="prettyprint prettyprinted">&lt;div&nbsp;class=&quot;pull-left&quot;&gt;&lt;/div&gt;
+&lt;div&nbsp;class=&quot;pull-right&quot;&gt;&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>清除浮动</h3>
+            </header>
+            <article>
+                <p>只需要一个CSS类名即可使得内部浮动元素也具备高度等特性。</p>
+                <pre class="prettyprint prettyprinted">&lt;div&nbsp;class=&quot;clearfix&quot;&gt;...&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>块居中</h3>
+            </header>
+            <article>
+                <p>使得一个具备固定宽度的能够在父级容器中居中显示。</p>
+                <pre class="prettyprint prettyprinted">&lt;div&nbsp;class=&quot;center-block&quot;&gt;...&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>隐藏文本</h3>
+            </header>
+            <article>
+                <p>隐藏文本能够使得标签内的文本不显示，通常用于图片代替文本。</p>
+                <pre class="prettyprint prettyprinted">&lt;h1&nbsp;class=&quot;text-hide&quot;&gt;此处文本不会显示&lt;/h1&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>显示或隐藏元素</h3>
+            </header>
+            <article>
+                <p>提供多个辅助类来帮助切换内容显示。</p>
+                <pre class="lang-css prettyprint prettyprinted">.hide{
+&nbsp;&nbsp;display:&nbsp;none;
+}
+.hidden{
+&nbsp;&nbsp;display:&nbsp;none!important;
+}
+.show{
+&nbsp;&nbsp;display:&nbsp;block;
+}
+.showing{
+&nbsp;&nbsp;display:&nbsp;block!important;
+}
+.invisible{
+&nbsp;&nbsp;visibility:&nbsp;hidden;
+}</pre>
+                <p>
+                    <code>.hidden</code>和<code>.showing</code>具备更高的优先级，防止其他规则重写。<code>.invisible</code>仅仅隐藏元素，但元素内容所占的空间并不会清除。</p>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

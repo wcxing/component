@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js的使用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>本框架基于bootstrap3.3.5版本深度定制，在原框架的基础上调整、添加很多基于我们业务形态的组件，html+css部分改动较多，js部分基本上保留了原框架中的js插件，舍弃了一部分功能稍弱的插件代码，而用功能等强大专业的同等插件替代，比如轮播插件，基于我们的轮播形式，我们引入了swiper而放弃了原本自带的carousel.js。</p>
+            <p>但是，我们仍然使用了其他功能要求不太高的部分。整个interface.js中压缩了如下组件部分：</p>
+            <ul>
+                <li>util.js</li>
+                <li>alert.js</li>
+                <li>button.js</li>
+                <!-- <li>carousel.js</li> -->
+                <li>collapse.js</li>
+                <li>dropdown.js</li>
+                <!-- <li>modal.js</li> -->
+                <li>scrollspy.js</li>
+                <li>tab.js</li>
+                <li>tooltip.js</li>
+                <!-- <li>popover.js</li> -->
+            </ul>
+            <p>其他的插件，要求使用require的方式按需引入，而针对以上使用较多的交互，合并后一次性引入interface.js。</p>
+        </article>
+        <section>
+        	<header>
+        		<h3>插件的调用</h3>
+        	</header>
+        	<article>
+        		<p>事件的绑定和解除绑定</p>
+        		<p>不得不先讲一下js事件的注册机制。</p>
+        		<button class="btn">按钮</button>
+        		<script type="text/javascript">
+        		$(".btn").click(function(event) {
+        			/* Act on the event */
+        		});
+        		</script>
+        		
+        		<script type="text/javascript">
+        		$(function(){
+	        		$(".btn").click(function(event) {
+	        			/* Act on the event */
+	        		});
+        		})
+        		</script>
+        		<button class="btn">按钮</button>
+
+
+        		
+        		<script type="text/javascript">
+        		$(function(){
+	        		$(".btn").click(function(event) {
+	        			/* Act on the event */
+	        		});
+        		})
+        		$(function(){
+        			$("body").append('<button class="btn">按钮</button>')
+        		})
+        		</script>
+        	</article>
+        </section>
+    </div>
+</body>
+
+</html>

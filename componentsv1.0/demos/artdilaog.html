@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>artDialog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/plugins/artDialog/ui-dialog.css" rel="stylesheet">
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/plugins/artDialog/dialog-plus.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>artDialog —— 经典的网页对话框组件，内外皆用心雕琢。</p>
+            <p>详细文档请移步：<a target="_blank" href="http://aui.github.io/artDialog/doc/">artDialog官方文档</a></p>
+        </article>
+        <section>
+            <header>
+                <h3>常用对话框</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <button class="btn mgr-md" id="js_alert">alert</button>
+                    <button class="btn mgr-md" id="js_confirm">confirm</button>
+                    <button class="btn mgr-md" id="js_prompt">prompt</button>
+                </div>
+                <script>
+                // alert
+                $('#js_alert').on('click', function() {
+                    dialog('提示信息alert', function() {
+                        alert('您点击确认了！')
+                    }).showModal();
+                });
+                // confirm
+                $('#js_confirm').on('click', function() {
+                    dialog('请确认信息！', function() {
+                        alert('点击确认了')
+                    }, function() {
+                        alert('点击取消了')
+                    }).showModal();
+                });
+                // prompt
+                $('#js_prompt').on('click', function() {
+                    dialog({
+                        title: '请输入一个值',
+                        content: '<input type="text" class="form-control" id="js_prompt_input">',
+                        ok: function() {
+                            var value = $('#js_prompt_input').val();
+                            alert('您输入的值为: ' + value);
+                        }
+                    }).showModal();
+                });
+                </script>
+                <pre>
+// alert
+$('#js_alert').on('click', function() {
+    dialog('提示信息alert', function() {
+        alert('您点击确认了！')
+    }).showModal();
+});
+
+// confirm
+$('#js_confirm').on('click', function() {
+    dialog('请确认信息！', function() {
+        alert('点击确认了')
+    }, function() {
+        alert('点击取消了')
+    }).showModal();
+});
+
+// prompt
+$('#js_prompt').on('click', function() {
+    dialog({
+        title: '请输入一个值',
+        content: '&lt;input type="text" class="form-control" id="js_prompt_input"&gt;',
+        ok: function() {
+            var value = $('#js_prompt_input').val();
+            alert('您输入的值为: ' + value);
+        }
+    }).showModal();
+}); 
+                </pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>更多应用</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <button class="btn mgr-md" id="js_element">弹出本页面内的div</button>
+                    <button class="btn mgr-md" id="js_iframe">弹出iframe页面</button>
+                    <button class="btn mgr-md" id="js_follow">弹窗跟随</button>
+                </div>
+                <script>
+                // 弹出本页面内的div
+                $('#js_element').on('click', function() {
+                    dialog({
+                        id: 'dg_element',
+                        title: '本页面内弹窗',
+                        content: document.getElementById('js_element_box'),
+                        width: 800
+                    }).showModal();
+                });
+
+                // 弹出iframe页面
+                $("#js_iframe").click(function(event) {
+                    dialog({
+                        title: '本页面内弹窗',
+                        url: 'ztree.html',
+                        oniframeload: function() {
+                            console.log('oniframeload');
+                        },
+                        width: 800,
+                        padding: 0,
+                        ok: function() {
+
+                        }
+                    }).showModal();
+                });
+
+                // 弹窗跟随
+                $('#js_follow').on('click', function() {
+                    dialog({
+                        id: 'dg_element',
+                        title: '提示信息',
+                        content: '弹窗跟随',
+                        quickClose:true,
+                        align: 'right top',
+                        width: 200
+                    }).show($(this)[0]);
+                });
+                </script>
+                <pre>
+// 弹出本页面内的div
+$('#js_element').on('click', function() {
+    dialog({
+        id: 'dg_element',
+        title: '本页面内弹窗',
+        content: document.getElementById('js_element_box'),
+        width: 800
+    }).showModal();
+});
+
+// 弹出iframe页面
+$("#js_iframe").click(function(event) {
+    dialog({
+        title: '本页面内弹窗',
+        url: 'ztree.html',
+        oniframeload: function() {
+            console.log('oniframeload');
+        },
+        width: 800,
+        padding: 0,
+        ok: function() {
+
+        }
+    }).showModal();
+});
+
+// 弹窗跟随
+$('#js_follow').on('click', function() {
+    dialog({
+        id: 'dg_element',
+        title: '提示信息',
+        content: '弹窗跟随',
+        align: 'right top',
+        width: 200
+    }).show($(this)[0]);
+});
+                </pre>
+            </article>
+        </section>
+    </div>
+    <!-- dialog - element start -->
+    <div id="js_element_box" style="display: none;">
+        <div class="row clearfix">
+            <div class="col-md-12 col-sm-24 form-group">
+                <label class="col-md-8 col-sm-4 control-label text-right">资源类型</label>
+                <div class="col-md-16 col-sm-18">
+                    <div class="radio">
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample"> 单选框1</label>
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample"> 单选框1</label>
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample"> 单选框1</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <label class="col-md-8 col-sm-8 control-label text-right">数据中心</label>
+                <div class="col-md-12 col-sm-12">
+                    <select class="form-control">
+                        <option value="">所有</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <label class="col-md-8 col-sm-8 control-label text-right">选择资源</label>
+                <div class="col-md-12 col-sm-12">
+                    <select class="form-control">
+                        <option value="">所有</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-24 form-group">
+                <label class="col-md-8 col-sm-4 control-label text-right">指标选择</label>
+                <div class="col-md-12 col-sm-18">
+                    <select class="form-control">
+                        <option value="">CPU使用量</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <label class="col-md-8 col-sm-8 control-label text-right">集群</label>
+                <div class="col-md-12 col-sm-12">
+                    <select class="form-control">
+                        <option value="">所有</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-24 form-group">
+                <label class="col-md-8 col-sm-4 control-label text-right">时间维度</label>
+                <div class="col-md-16 col-sm-18">
+                    <div class="radio">
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample2"> 实时</label>
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample2"> 小时</label>
+                        <label class="mgr-md">
+                            <input type="radio" name="radioOptionsExample2"> 天</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <label class="col-md-8 col-sm-8 control-label text-right">展示方式</label>
+                <div class="col-md-12 col-sm-12">
+                    <select class="form-control">
+                        <option value="">图形</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="text-center pdt-md">
+            <button class="btn btn-primary mgr-md" onclick="dialog.get('dg_element').close();">查询</button>
+            <button class="btn btn-danger">重置</button>
+        </div>
+    </div>
+    <!-- dialog - element end -->
+</body>
+
+</html>

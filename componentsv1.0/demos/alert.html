@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>alert</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+            <p>消息框能够轻松展示一些需要引起用户注意的内容。</p>
+        </article>
+        <section>
+            <header>
+                <h3>不同感情色彩的消息框</h3>
+            </header>
+            <article>
+                <p>这里提供了5中色彩的消息框用于不同场合。</p>
+                <div class="example">
+                    <div class="alert">
+                        <h4>你好</h4>
+                        <hr>
+                        <p>有一些内容你可能需要知道。</p>
+                    </div>
+                    <div class="alert alert-primary">
+                        <h4>Hello</h4>
+                        <hr>
+                        <p>World.</p>
+                    </div>
+                    <div class="alert alert-secondary">
+                        <h4>Hello</h4>
+                        <hr>
+                        <p>World.</p>
+                    </div>
+                    <div class="alert alert-success">
+                        <h4>太好了!</h4>
+                        <hr>
+                        <strong>一切已准备就绪。</strong>
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Hi!</strong> 这条消息可能需要你注意。
+                    </div>
+                    <div class="alert alert-warning">
+                        <strong>注意!</strong> 看起来遇到一些问题。
+                    </div>
+                    <div class="alert alert-danger">
+                        <h4>不好了!</h4>
+                        <p>确实遇到了问题，请立即处理吧。</p>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-primary&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-success&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-info&quot;&gt;...&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>使用图标</h3>
+            </header>
+            <article>
+                <p>
+                    在消息框中使用醒目的合适的图标能更容易让用户接收。需要使<code>.alert</code>配合<code>.with-icon</code>参数一起使用。</p>
+                <div class="example">
+                    <div class="alert with-icon">
+                        <i class="font-icon font-icon-inbox"></i>
+                        <div class="content">
+                            <h4>你好</h4>
+                            <hr>
+                            <p>有一些内容你可能需要知道。</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-success with-icon">
+                        <i class="font-icon font-icon-check-circle"></i>
+                        <div class="content">
+                            <h4>太好了!</h4>
+                            <hr>
+                            <strong>一切已准备就绪。</strong>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary with-icon">
+                        <i class="font-icon font-icon-star"></i>
+                        <div class="content">
+                            <h4>Hello</h4>
+                            <hr>
+                            <p>World.</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-info with-icon">
+                        <i class="font-icon font-icon-info-circle"></i>
+                        <div class="content"><strong>Hi!</strong> 这条消息可能需要你注意。</div>
+                    </div>
+                    <div class="alert alert-warning with-icon">
+                        <i class="font-icon font-icon-frown-o"></i>
+                        <div class="content"><strong>注意!</strong> 看起来遇到一些问题。</div>
+                    </div>
+                    <div class="alert alert-danger with-icon">
+                        <i class="font-icon font-icon-times-circle"></i>
+                        <div class="content">
+                            <h4>不好了!</h4>
+                            <p>确实遇到了问题，请立即处理吧。</p>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&nbsp;alert-success&nbsp;with-icon&quot;&gt;
+&nbsp;&nbsp;&lt;i&nbsp;class=&quot;icon-ok-sign&quot;&gt;&lt;/i&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;content&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>使用反色主题</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <div class="alert alert-inverse with-icon">
+                        <i class="font-icon font-icon-inbox"></i>
+                        <div class="content">
+                            <h4>你好</h4>
+                            <hr>
+                            <p>有一些内容你可能需要知道。</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-primary-inverse with-icon">
+                        <i class="font-icon font-icon-star"></i>
+                        <div class="content">
+                            <h4>Hello</h4>
+                            <hr>
+                            <p>World.</p>
+                        </div>
+                    </div>
+                    <div class="alert alert-success-inverse with-icon">
+                        <i class="font-icon font-icon-check-circle"></i>
+                        <div class="content">
+                            <h4>太好了!</h4>
+                            <hr>
+                            <strong>一切已准备就绪。</strong>
+                        </div>
+                    </div>
+                    <div class="alert alert-info-inverse with-icon">
+                        <i class="font-icon font-icon-info-circle"></i>
+                        <div class="content"><strong>Hi!</strong> 这条消息可能需要你注意。</div>
+                    </div>
+                    <div class="alert alert-warning-inverse with-icon">
+                        <i class="font-icon font-icon-frown-o"></i>
+                        <div class="content"><strong>注意!</strong> 看起来遇到一些问题。</div>
+                    </div>
+                    <div class="alert alert-danger-inverse with-icon">
+                        <i class="font-icon font-icon-times-circle"></i>
+                        <div class="content">
+                            <h4>不好了!</h4>
+                            <p>确实遇到了问题，请立即处理吧。</p>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&nbsp;alert-inverse&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-primary-inverse&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-danger-inverse&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-success-inverse&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning-inverse&quot;&gt;...&lt;/div&gt;
+&lt;div&nbsp;class=&quot;alert&nbsp;alert-info-inverse&quot;&gt;...&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>块级消息</h3>
+            </header>
+            <article>
+                <p>块级消息框将没有外边距和边框圆角，适合用在页面顶部或者浮现在页面之上</p>
+                <div class="example pd-0" style="border:none;">
+                    <div class="alert alert-success alert-block with-icon">
+                        <i class="font-icon font-icon-check-circle"></i>
+                        <div class="content"><strong>太好了!</strong> 一切已准备就绪。</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&nbsp;alert-block&quot;&gt;...&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>消息框中的链接</h3>
+            </header>
+            <article>
+                <p>当消息框中包含链接时，推荐使用工具栏<code>.alert-link</code>来使得链接的样式与消息框类型保持一致。</p>
+                <div class="example">
+                    <div class="alert with-icon">
+                        <i class="font-icon font-icon-inbox"></i>
+                        <div class="content"><strong>你好!</strong> <a class="alert-link" href="###">有一些内容</a>你可能需要知道。</div>
+                    </div>
+                    <div class="alert alert-primary with-icon">
+                        <i class="font-icon font-icon-star"></i>
+                        <div class="content">
+                            <h4>Hello</h4>
+                            <hr>
+                            <p><a href="###">World.</a></p>
+                        </div>
+                    </div>
+                    <div class="alert with-icon alert-success">
+                        <i class="font-icon font-icon-check-circle"></i>
+                        <div class="content"><strong>太好了!</strong> 一切已<a class="alert-link" href="###">准备就绪</a>。</div>
+                    </div>
+                    <div class="alert with-icon alert-info">
+                        <i class="font-icon font-icon-info-circle"></i>
+                        <div class="content"><strong>Hi!</strong> 这条消息可能<a class="alert-link" href="###">需要你注意</a>。</div>
+                    </div>
+                    <div class="alert with-icon alert-warning">
+                        <i class="font-icon font-icon-frown-o"></i>
+                        <div class="content"><strong>注意!</strong> 看起来遇到<a class="alert-link" href="###">一些问题</a>。</div>
+                    </div>
+                    <div class="alert with-icon alert-danger">
+                        <i class="font-icon font-icon-times-circle"></i>
+                        <div class="content"><strong>不好了!</strong> 确实遇到了问题，请<a class="alert-link" href="###">立即处理</a>吧。</div>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&quot;&gt;注意消息框中的&lt;a&nbsp;class=&quot;alert-link&quot;&nbsp;href=&quot;your/url/&quot;&gt;链接&lt;/a&gt;。&lt;/div&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>可以关闭的消息框</h3>
+            </header>
+            <article>
+                <p>可以用一个可选的<code>.alert-dismissable</code>和关闭按钮。</p>
+                <div class="example example-alert-dismissable">
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <strong>注意!</strong> 看起来遇到一些问题。
+                        <p>您可以点击右上角的 <i class="icon-remove"></i> 来关闭这条消息。</p>
+                    </div>
+                </div>
+                <pre>&lt;div&nbsp;class=&quot;alert&nbsp;alert-warning&nbsp;alert-dismissable&quot;&gt;
+&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;close&quot;&nbsp;data-dismiss=&quot;alert&quot;&nbsp;aria-hidden=&quot;true&quot;&gt;×&lt;/button&gt;
+&nbsp;&nbsp;&lt;p&gt;您可以点击右上角的&nbsp;&lt;i&nbsp;class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&nbsp;来关闭这条消息。&lt;/p&gt;
+&lt;/div&gt;</pre>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>

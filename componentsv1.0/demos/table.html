@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>table</title>
+    <link href="../assets/css/doc.css" rel="stylesheet">
+    <link href="../assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/interface.css" rel="stylesheet">
+    <script src="../assets/js/prettify/run_prettify.js"></script>
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/interface.js"></script>
+</head>
+
+<body>
+    <div class="pageContent">
+        <article>
+        <p>表格只用来展示数据，不能用来作为布局。一个表格完整的结构包含thead/tbody/tfoot，三者均为可选。一个表格只能有一个thead和一个tfoot,但是允许有多个tbody。</p>
+        <p>JS插件篇中会提供更多表格相关的插件，比如固定头部滚动、大数据datatable等</p>
+        </article>
+        <section>
+            <header>
+                <h3>基本类型</h3>
+            </header>
+            <article>
+                <div class="example">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-2">名称</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>表头 <code>&lt;thead&gt;</code></td>
+                                <td>
+                                    一般表格的第一行作为表头，用于描述表中每一列数据名称。为区别于表格其他行，表头具备不同的样式，例如字体加粗等。在垂直显示一组数据的表格中，表头也可能是垂直的第一列，而不是行。</td>
+                            </tr>
+                            <tr>
+                                <td>内容 <code>&lt;tbody&gt;</code></td>
+                                <td>
+                                    一般内容会在单元格内靠左对齐，<code>对于数字可能靠右对齐比较好</code>。在一些表格中，内容可以按单元格选择或者按行选择，选中的部分会以不同的样式区分。为了使得行与行便于区分，通常也会使得行交替使用不同的背景色。图片或其他控件也可以应用单元格中。</td>
+                            </tr>
+                            <tr>
+                                <td>表尾 <code>&lt;tfoot&gt;</code></td>
+                                <td>表位放置与表末尾提供与表相关补充数据或操作，不过并不常见。</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>提示</th>
+                                <td>表头、内容、和表尾都是可选的。</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <pre>&lt;table&nbsp;class=&quot;table&quot;&gt;
+&nbsp;&nbsp;&lt;thead&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;...&lt;/th&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;...&lt;/th&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+&nbsp;&nbsp;&lt;/thead&gt;
+&nbsp;&nbsp;&lt;tbody&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+&nbsp;&nbsp;&lt;/tbody&gt;
+&nbsp;&nbsp;&lt;tfoot&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;...&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+&nbsp;&nbsp;&lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>隔行交替样式的表</h3>
+            </header>
+            <article>
+                <p><code>.table-striped</code></p>
+                <div class="example">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sunshine</td>
+                                <td>Sunday</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sunday</td>
+                                <td>Sunshine</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>catouse</td>
+                                <td>azhi</td>
+                                <td>zenUI</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>God</td>
+                                <td>Lady Gaga</td>
+                                <td>catouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre>&lt;table&nbsp;class=&quot;table&nbsp;table-striped&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/table&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>响应鼠标悬停</h3>
+            </header>
+            <article>
+                <p><code>.table-hover</code></p>
+                <div class="example">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sunshine</td>
+                                <td>Sunday</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sunday</td>
+                                <td>Sunshine</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>catouse</td>
+                                <td>azhi</td>
+                                <td>zenUI</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>God</td>
+                                <td>Lady Gaga</td>
+                                <td>catouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre>&lt;table&nbsp;class=&quot;table&nbsp;table-hover&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/table&gt;</pre>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>带所有边框的表格</h3>
+            </header>
+            <article>
+                <p><code>.table-bordered</code></p>
+                <div class="example">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sunshine</td>
+                                <td>Sunday</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sunday</td>
+                                <td>Sunshine</td>
+                                <td>catouse</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>catouse</td>
+                                <td>azhi</td>
+                                <td>zenUI</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>God</td>
+                                <td>Lady Gaga</td>
+                                <td>catouse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>更为紧凑的表格</h3>
+            </header>
+            <article>
+                <p><code>.table-sm</code></p>
+                <div class="example">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>catouse</td>
+                                <td>hello</td>
+                                <td>world</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>jay</td>
+                                <td>thks</td>
+                                <td>jajaja</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>JK row</td>
+                                <td>thks</td>
+                                <td>Pa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>色彩主题</h3>
+            </header>
+            <article>
+                <p>可以根据语义标记整行或者某一单元格</p>
+                <div class="example">
+                    <table class="table">
+                        <thead>
+                            <tr class="primary">
+                                <th>#</th>
+                                <th>描述</th>
+                                <th>Payment Taken</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="success">
+                                <td>1</td>
+                                <td>表示成功或积极的行为。</td>
+                                <td>01/04/2012</td>
+                                <td>Approved</td>
+                            </tr>
+                            <tr class="danger">
+                                <td>2</td>
+                                <td>表示一个危险或存有潜在危险的行为。</td>
+                                <td>02/04/2012</td>
+                                <td>Declined</td>
+                            </tr>
+                            <tr class="warning">
+                                <td>3</td>
+                                <td>表示警告，可能需要注意。</td>
+                                <td>03/04/2012</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr class="active">
+                                <td>4</td>
+                                <td>标记为激活行。</td>
+                                <td>04/04/2012</td>
+                                <td>Call in to confirm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</htmlt>

@@ -1,0 +1,112 @@
+{
+	"widget1": {
+    "thumbail": "thumbnail/button_01.png",
+    "widgetName": "button按钮",
+    "configMap": {
+      "color": {
+        "zh": "颜色",
+        "pattern": "select",
+        "target": "class",
+        "option": ["蓝色", "绿色", "青色", "黄色", "红色", "蓝色线框" ,"灰色线框", "绿色线框按钮", "黄色线框", "红色线框"],
+        "optionValue": ["btn-primary", "btn-succes", "btn-info", "btn-warning", "btn-danger", "btn-primary-outline", "btn-secondary-outline", "btn-success-outline", "btn-warning-outline", "btn-danger-outline"]
+      },
+      "html": {
+        "zh": "html",
+        "pattern": "input[text]"
+      },
+      "status": {
+        "zh": "状态",
+        "pattern": "select",
+        "target": "attribute",
+        "option": ["激活", "禁用"],
+        "optionValue": ["active", "disabled"]        
+      },
+      "size": {
+        "zh": "尺寸",
+        "pattern": "select",
+        "target": "class",
+        "option": ["大", "正常", "小", "块级"],
+        "optionValue": ["btn-lg", "btn", "btn-sm", "btn-block"]   
+      }
+    }
+  },
+  "widget2": {
+    "thumbail": "thumbnail/button_01.png",
+    "widgetName": "a按钮",
+    "configMap": {
+      "color": {
+        "zh": "颜色",
+        "pattern": "select",
+        "target": "class",
+        "option": ["蓝色", "绿色", "青色", "黄色", "红色", "蓝色线框" ,"灰色线框", "绿色线框按钮", "黄色线框", "红色线框"],
+        "optionValue": ["btn-primary", "btn-succes", "btn-info", "btn-warning", "btn-danger", "btn-primary-outline", "btn-secondary-outline", "btn-success-outline", "btn-warning-outline", "btn-danger-outline"]
+      },
+      "html": {
+        "zh": "html",
+        "pattern": "input[text]"
+      },
+      "status": {
+        "zh": "状态",
+        "pattern": "select",
+        "target": "class",
+        "option": ["激活", "禁用"],
+        "optionValue": ["active", "disabled"]        
+      },
+      "size": {
+        "zh": "尺寸",
+        "pattern": "select",
+        "target": "class",
+        "option": ["大", "正常", "小", "块级"],
+        "optionValue": ["btn-lg", "btn", "btn-sm", "btn-block"]   
+      },
+      "href": {
+        "zh": "href",
+        "pattern": "input[text]",
+        "target": "href"
+      }
+    }
+  },
+  "widget3": {
+    "thumbail": "thumbnail/button_01.png",
+    "widgetName": "input按钮",
+    "configMap": {
+      "color": {
+        "zh": "颜色",
+        "pattern": "select",
+        "target": "class",
+        "option": ["蓝色", "绿色", "青色", "黄色", "红色", "蓝色线框" ,"灰色线框", "绿色线框按钮", "黄色线框", "红色线框"],
+        "optionValue": ["btn-primary", "btn-succes", "btn-info", "btn-warning", "btn-danger", "btn-primary-outline", "btn-secondary-outline", "btn-success-outline", "btn-warning-outline", "btn-danger-outline"]
+      },
+      "html": {
+        "zh": "html",
+        "pattern": "input[text]"
+      },
+      "status": {
+        "zh": "状态",
+        "pattern": "select",
+        "target": "class",
+        "option": ["激活", "禁用"],
+        "optionValue": ["active", "disabled"]        
+      },
+      "size": {
+        "zh": "尺寸",
+        "pattern": "select",
+        "target": "class",
+        "option": ["大", "正常", "小", "块级"],
+        "optionValue": ["btn-lg", "btn", "btn-sm", "btn-block"]   
+      },
+      "href": {
+        "zh": "href",
+        "pattern": "input[text]",
+        "target": "href"
+      },
+      "type": {
+        "zh": "href",
+        "pattern": "select",
+        "target": "type",
+        "option": ["重置", "提交", "按钮"],
+        "optionValue": ["reset", "submit", "button"] 
+      }
+    }
+  }
+}

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>button</title>
+    <!-- Bootstrap -->
+    <link href="../../componentsv1.0/assets/css/doc.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/js/prettify/prettify.css" rel="stylesheet">
+    <link href="../../componentsv1.0/assets/css/interface.css" rel="stylesheet">
+    <script src="../../componentsv1.0/assets/js/prettify/run_prettify.js"></script>
+    <script src="../../componentsv1.0/assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../../componentsv1.0/assets/js/interface.js"></script>
+</head>
+
+<body onload="afterPageLoad()">
+    <div class="pageContent">
+        <style>
+        .colorset > div.copyable:after {
+            display: none;
+        }
+        
+        .colorset .color-value {
+            position: absolute;
+            right: 5px;
+            top: 4px;
+            font-size: 12px;
+        }
+        .colorset .color-name {
+            position: absolute;
+            right: 5px;
+            bottom: 4px;
+            font-size: 12px;
+        }
+        
+        .colorset .color-value {
+            opacity: 1;
+        }
+        .color-box{
+            position: relative;
+            display: block;
+            float: left;
+            width: 120px;
+            height: 120px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: #fff;
+            border: 1px solid rgba(0, 0, 0, .5);
+        }
+        .colorset .color-primary {
+            background-color: #3280fc;
+            border-color: #0462f7;
+        }
+        .colorset .color-secondary {
+            background-color: #145ccd;
+            border-color: #10479f;
+        }
+        .colorset .color-pale {
+            background-color: #ebf2f9;
+            border-color: #c4d8ed;
+        }
+        .colorset .color-fore {
+            background-color: #353535;
+            border-color: #1c1c1c;
+        }
+        .colorset .color-back {
+            background-color: #fff;
+            border-color: #e6e6e6;
+        }
+        .colorset .color-gray-darker {
+            background-color: #222;
+            border-color: #090909;
+        }
+        .colorset .color-gray-dark {
+            background-color: #333;
+            border-color: #1a1a1a;
+        }
+        .colorset .color-gray {
+            background-color: grey;
+            border-color: #666;
+        }
+        .colorset .color-gray-light {
+            background-color: #ddd;
+            border-color: #c4c4c4;
+        }
+        .colorset .color-gray-lighter {
+            background-color: #e5e5e5;
+            border-color: #cbcbcb;
+        }
+        .colorset .color-gray-pale {
+            background-color: #f1f1f1;
+            border-color: #d7d7d7;
+        }
+        .colorset .color-white {
+            background-color: #fff;
+            border-color: #e6e6e6;
+        }
+        .colorset .color-black {
+            background-color: #000;
+            border-color: #000;
+        }
+        .colorset .color-light {
+            background-color: #fff;
+            border-color: #e6e6e6;
+        }
+        .colorset .color-dark {
+            background-color: #353535;
+            border-color: #1c1c1c;
+        }
+        .colorset .color-red {
+            background-color: #ea644a;
+            border-color: #e53d1c;
+        }
+        .colorset .color-yellow {
+            background-color: #f1a325;
+            border-color: #d5890e;
+        }
+        .colorset .color-green {
+            background-color: #38b03f;
+            border-color: #2c8931;
+        }
+        .colorset .color-blue {
+            background-color: #03b8cf;
+            border-color: #028b9d;
+        }
+        .colorset .color-brown {
+            background-color: #bd7b46;
+            border-color: #996337;
+        }
+        .colorset .color-purple {
+            background-color: #8666b8;
+            border-color: #6c4aa1;
+        }
+        .colorset .color-danger {
+            background-color: #ea644a;
+            border-color: #e53d1c;
+        }
+        .colorset .color-warning {
+            background-color: #f1a325;
+            border-color: #d5890e;
+        }
+        .colorset .color-success {
+            background-color: #38b03f;
+            border-color: #2c8931;
+        }
+        .colorset .color-info {
+            background-color: #03b8cf;
+            border-color: #028b9d;
+        }
+        .colorset .color-important {
+            background-color: #bd7b46;
+            border-color: #996337;
+        }
+        .colorset .color-special {
+            background-color: #8666b8;
+            border-color: #6c4aa1;
+        }
+        .colorset .color-danger-pale {
+            background-color: #ffe5e0;
+            border-color: #ffbaad;
+        }
+        .colorset .color-warning-pale {
+            background-color: #fff0d5;
+            border-color: #ffdea2;
+        }
+        .colorset .color-success-pale {
+            background-color: #ddf4df;
+            border-color: #b6e8bb;
+        }
+        .colorset .color-info-pale {
+            background-color: #ddf3f5;
+            border-color: #b6e5e9;
+        }
+        .colorset .color-important-pale {
+            background-color: #f7ebe1;
+            border-color: #ecd0b9;
+        }
+        .colorset .color-special-pale {
+            background-color: #f5eeff;
+            border-color: #d7bbff;
+        }
+        
+        .colorset > div > .btn-copy-code:hover > .icon {
+            transform: scale(1);
+            opacity: 1;
+        }
+        </style>
+        <article>
+            <p>Interface的配色表包含三部分：主要颜色，灰度颜色及额外颜色。</p>
+        </article>
+        <section class="">
+            <header>
+                <h3>主要颜色</h3>
+            </header>
+            <article>
+                <p>包含3～5种颜色，决定了Interface界面整体色调。主要颜色会用在菜单、导航、链接、高亮选项等。</p>
+                <p>在Interface的默认配色方案中，包含以下主要颜色：</p>
+                <div class="colorset clearfix">
+                    <div class="color-box color-primary" data-color="primary" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name"> color-primary </div>
+                    </div>
+                    <div class="color-box color-secondary" data-color="secondary" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-secondary</div>
+                    </div>
+                    <div class="color-box color-pale" data-color="pale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-pale</div>
+                    </div>
+                    <div class="color-box color-fore" data-color="fore" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-fore</div>
+                    </div>
+                    <div class="color-box color-back" data-color="back" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-back</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>灰度颜色</h3>
+            </header>
+            <article>
+                <p>灰度颜色强制使用同一色调不同亮度的一组颜色。在无特别需求的情况下，一般使用黑色灰度。灰度颜色会用在块的背景，边框，次要的文本上。灰度颜色为界面创建了层次感，加深了内容与内容间的边界，更易于体现内容的重要程度。</p>
+                <div class="colorset clearfix">
+                    <div class="color-box color-gray-darker" data-color="grayDarker" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray-darker</div>
+                    </div>
+                    <div class="color-box color-gray-dark" data-color="grayDark" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray-darker</div>
+                    </div>
+                    <div class="color-box color-gray" data-color="gray" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray</div>
+                    </div>
+                    <div class="color-box color-gray-light" data-color="grayLight" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray-light</div>
+                    </div>
+                    <div class="color-box color-gray-lighter" data-color="grayLighter" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray-lighter</div>
+                    </div>
+                    <div class="color-box color-gray-pale" data-color="grayPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-gray-pale</div>
+                    </div>
+                </div>
+                <div class="colorset clearfix">
+                    <div class="color-box color-white" data-color="white" style="color: #333 !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-white</div>
+                    </div>
+                    <div class="color-box color-black" data-color="black" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-black</div>
+                    </div>
+                </div>
+                <div class="colorset clearfix">
+                    <div class="color-box color-light" data-color="light" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-light</div>
+                    </div>
+                    <div class="color-box color-dark" data-color="dark" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-dark</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h3>额外颜色</h3>
+            </header>
+            <article>
+                <p>额外的颜色为特殊控件提供的更多的色彩选择。例如各种级别的消息框，特殊作用的按钮，特殊文本等。</p>
+                <div class="colorset clearfix">
+                    <div class="color-box color-red" data-color="red" style="color: #fff !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-red</div>
+                    </div>
+                    <div class="color-box color-yellow" data-color="yellow" style="color: #333 !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-yellow</div>
+                    </div>
+                    <div class="color-box color-green" data-color="green" style="color: #fff !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-green</div>
+                    </div>
+                    <div class="color-box color-blue" data-color="blue" style="color: #fff !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-blue</div>
+                    </div>
+                    <div class="color-box color-brown" data-color="brown" style="color: #fff !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-brown</div>
+                    </div>
+                    <div class="color-box color-purple" data-color="purple" style="color: #fff !important">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-purple</div>
+                    </div>
+                </div>
+                <div class="colorset clearfix">
+                    <div class="color-box color-danger" data-color="danger">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-danger</div>
+                    </div>
+                    <div class="color-box color-warning" data-color="warning">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-warning</div>
+                    </div>
+                    <div class="color-box color-success" data-color="success">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-success</div>
+                    </div>
+                    <div class="color-box color-info" data-color="info">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-success</div>
+                    </div>
+                    <div class="color-box color-important" data-color="important" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-important</div>
+                    </div>
+                    <div class="color-box color-special" data-color="special" style="color: #fff">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-special</div>
+                    </div>
+                </div>
+                <div class="colorset clearfix">
+                    <div class="color-box color-danger-pale" data-color="dangerPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-danger-pale</div>
+                    </div>
+                    <div class="color-box color-warning-pale" data-color="warningPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-warning-pale</div>
+                    </div>
+                    <div class="color-box color-success-pale" data-color="successPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-success-pale</div>
+                    </div>
+                    <div class="color-box color-info-pale" data-color="infoPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-info-pale</div>
+                    </div>
+                    <div class="color-box color-important-pale" data-color="importantPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-important-pale</div>
+                    </div>
+                    <div class="color-box color-special-pale" data-color="specialPale" style="color: #333">
+                        <div class="color-value"></div>
+                        <div class="color-name">color-special-pale</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="alert alert-info mgt-big">
+            颜色值以实际框架中设置的颜色值为计算依据，计算背景色的值（rgb或者hex）,然后转成hex.
+        </div>
+    </div>
+    
+    <script>
+    function zero_fill_hex(num, digits) {
+        var s = num.toString(16);
+        while (s.length < digits)
+        s = "0" + s;
+        return s;
+    }
+    function rgb2hex(rgb) {
+        if (rgb.charAt(0) == '#')
+        return rgb;
+
+        var ds = rgb.split(/\D+/);
+        var decimal = Number(ds[1]) * 65536 + Number(ds[2]) * 256 + Number(ds[3]);
+        return "#" + zero_fill_hex(decimal, 6);
+    }
+    function afterPageLoad() {
+        $(".color-box").each(function(index, el) {
+            var color = $(this).css("backgroundColor");
+            $(this).find(".color-value").html(rgb2hex(color));
+        });
+    }
+    </script>
+</body>
+
+</html>

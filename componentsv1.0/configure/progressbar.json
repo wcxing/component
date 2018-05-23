@@ -1,0 +1,29 @@
+{
+    "widget1": {
+        "thumbail": "thumbnail/progressbar_01.png",
+        "widgetName": "进度条",
+        "configMap": {
+            "color": {
+                "zh": "颜色",
+                "pattern": "select",
+                "target": "class",
+                "option": ["蓝色", "绿色", "青色", "黄色", "红色", "蓝色线框", "灰色线框", "绿色线框按钮", "黄色线框", "红色线框"],
+                "optionValue": ["btn-primary", "btn-succes", "btn-info", "btn-warning", "btn-danger", "btn-primary-outline", "btn-secondary-outline", "btn-success-outline", "btn-warning-outline", "btn-danger-outline"]
+            },
+            "striped":{
+              "zh":"条纹",
+              "pattern": "select",
+                "target": "class",
+                "option": ["是", "否"],
+                "optionValue": ["progress-striped", ""]
+            },
+            "animated":{
+              "zh":"动画",
+              "pattern": "select",
+                "target": "class",
+                "option": ["是", "否"],
+                "optionValue": ["active", ""]
+            }
+        }
+    }
+}
